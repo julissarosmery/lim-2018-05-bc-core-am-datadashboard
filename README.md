@@ -1,3 +1,7 @@
+
+
+# usuario:
+se tomo notas de los pedidos que hizo el usuario de manera global
 ![foto](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/35348807_1664476943605784_6856292960187711488_n.png?_nc_cat=0&oh=4be724a14d53b7148f5282a7965c6975&oe=5BC1A879)
 
 # prototipo de baja fidelidad:
