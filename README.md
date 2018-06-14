@@ -1,4 +1,4 @@
-#prototipo de baja fidelidad:
+# prototipo de baja fidelidad:
 
 ![uno](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/35265650_1664436620276483_8029700329220079616_n.jpg?_nc_cat=0&oh=e88cccba2efd8c14d9f8100371b3dc83&oe=5BAD4CD3)
 ![dos](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/35416132_1664443180275827_6780019348942618624_n.jpg?_nc_cat=0&oh=4954683e01d9dbecf07717382d05f496&oe=5BA1E1B6)
