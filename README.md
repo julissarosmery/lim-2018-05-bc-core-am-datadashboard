@@ -35,3 +35,4 @@ se tomo notas de los pedidos que hizo el usuario de manera global
 # prototipo de alta fidelidad:
 https://www.figma.com/proto/0vVFpPYyTxVeyenGRzpIwSIi/pag-web?scaling=contain&node-id=14%3A9
 
+
