@@ -6,11 +6,11 @@ const botonUsuarias = document.getElementById('boUsuarias');//boton
 const cohortsList = document.getElementById('cohort');//no lo usare
 const usuarias = document.getElementById('resultado');//usuarias
 
-const getJSON = (url, callback) => {
+const getJSON = (url, x) => {
 
   const request = new XMLHttpRequest();
   request.open('GET', url);
-  request.onload = callback;
+  request.onload = x;
   request.onerror = handleError;
   request.send();
 }
@@ -40,16 +40,17 @@ const addCohorts = (event) => {
   });
 
 }
+
+botonUsuarias.addEventListener('click',(e) => {
+  e.preventDefault();
+  getJSON(urlUser,addUser);
+});
 cohortsList.addEventListener('change', e => {
   e.preventDefault();
   if(cohortsList.value === 'lim-2018-03-pre-core-pw') {
     getJSON(urlUser,addUser);
   } 
  
-});
-botonUsuarias.addEventListener('click',(e) => {
-  e.preventDefault();
-  getJSON(urlUser,addUser);
 });
 
 getJSON(urlCohorts, addCohorts);
