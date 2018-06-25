@@ -4,7 +4,8 @@ const urlCohorts = '../data/cohorts.json';
 
 const botonUsuarias = document.getElementById('boUsuarias');//boton
 const cohortsList = document.getElementById('cohort');//no lo usare
-const usuarias = document.getElementById('resultado');//usuarias
+const resultado= document.getElementById('resultado');//usuarias
+const us2017=document.getElementById('b2017');
 
 const getJSON = (url, callback) => {
 
@@ -19,13 +20,13 @@ const handleError = () => {
   console.log('Se ha presentado un error');
 }
 
-const addUser = (event) => { 
-  const data = JSON.parse(event.target.responseText);
+const addUser = (ggg) => { 
+  const data = JSON.parse(ggg.target.responseText);
   console.log (data);
   data.map((usuario) => {
     let usuaria = document.createElement('li');
     usuaria.innerHTML = usuario.name;
-    usuarias.appendChild(usuaria);
+    resultado.appendChild(usuaria);
   }); 
 }
 debugger
@@ -35,10 +36,9 @@ const addCohorts = (event) => {
   data.map((cohorts) => {
     let cohoList = document.createElement('option');
     cohoList.value = cohorts.id;
-    cohoList.innerHTML = cohorts.id;
-    cohortsList.appendChild(cohoList);
+     cohoList.innerHTML = cohorts.id;
+     cohortsList.appendChild(cohoList);
   });
-
 }
 cohortsList.addEventListener('change', e => {
   e.preventDefault();
@@ -53,3 +53,5 @@ botonUsuarias.addEventListener('click',(e) => {
 });
 
 getJSON(urlCohorts, addCohorts);
+
+
