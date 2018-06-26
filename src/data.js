@@ -1,4 +1,6 @@
 window.computeUsersStats = () => {
+    
+
  
 }
 
@@ -13,6 +15,8 @@ window.filterUsers = () => {
 window.processCohortData = () => {
 
 }
+
+
 
 
 //Buttons

@@ -4,7 +4,7 @@ const cohortsData = '../data/cohorts.json'
 
 //Creating a function where the url and the onload property are parameters
 const getData = (url, onload) => {
-
+//xmlhttprecuest es para volver la pagina asincrona
    let dataRequest = new XMLHttpRequest();
    dataRequest.open('GET', url);
    dataRequest.onload = onload;
@@ -16,7 +16,7 @@ const getData = (url, onload) => {
 window.dataCohort = {}
 
 const saveUsersData = (event) => {
-   //Saving users data
+   //jason son los datos con los que vamos a interactuar
    dataCohort.users = JSON.parse(event.target.responseText);
 }
 
