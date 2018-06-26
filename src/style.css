@@ -1,0 +1,37 @@
+body{
+    background: #E5B933;
+    position: absolute; 
+}
+
+.prom-2014-button {
+    background: #F2994A;
+    padding: 15%;
+}
+
+.prom-2015-button {
+    background: #F2994A;
+    padding: 15%;
+}
+
+.prom-2016-button {
+    background: #F2994A;
+    padding: 15%;
+}
+
+.prom-2017-button {
+    background: #F2994A;
+    padding: 15%;
+}
+
+#prom-2018-button {
+    background: #F2994A;
+    padding: 15%;
+}
+
+#block-2 {
+    display: block;
+}
+
+#block-3 {
+    display: none;
+}
