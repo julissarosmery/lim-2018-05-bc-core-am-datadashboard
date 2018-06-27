@@ -1,6 +1,10 @@
-window.computeUsersStats = () => {
- 
+window.computeUsersStats = (users, progress, courses) => {
+  const userWithStats = {
+    
+  }
 }
+
+userWithStats();     
 
 window.sortUsers = () => {
 

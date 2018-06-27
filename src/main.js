@@ -38,5 +38,3 @@ const handleError= () => {
 getData(usersData, saveUsersData);
 getData(progressData, saveProgressData);
 getData(cohortsData, saveCohortsData);
-
-console.log(getData);
