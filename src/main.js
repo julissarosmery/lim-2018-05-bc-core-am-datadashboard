@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const urlProgress = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
 const urlUser = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
 const urlCohorts = '../data/cohorts.json';
@@ -14,12 +15,36 @@ const getJSON = (url, callback) => {
   request.onload = callback;
   request.onerror = handleError;
   request.send();
+=======
+const usersData = '../data/cohorts/lim-2018-03-pre-core-pw/users.json'
+const progressData = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json'
+const cohortsData = '../data/cohorts.json'
+
+//Creating a function where the url and the onload property are parameters
+const getData = (url, onload) => {
+//xmlhttprecuest es para volver la pagina asincrona
+   let dataRequest = new XMLHttpRequest();
+   dataRequest.open('GET', url);
+   dataRequest.onload = onload;
+   dataRequest.onerror = handleError;
+   dataRequest.send();
+};
+
+//We declare the global object dataCohort, it's empty and will be fill when we call the data  
+window.dataCohort = {}
+
+const saveUsersData = (event) => {
+   //jason son los datos con los que vamos a interactuar
+   dataCohort.users = JSON.parse(event.target.responseText);
+>>>>>>> 32a131dd81a4f358ce5ff8b3cf61227c4f2d32d9
 }
 
-const handleError = () => {
-  console.log('Se ha presentado un error');
+const saveProgressData = (event) => {
+    //Saving progress data
+   dataCohort.progress = JSON.parse(event.target.responseText);
 }
 
+<<<<<<< HEAD
 const addUser = (ggg) => { 
   const data = JSON.parse(ggg.target.responseText);
   console.log (data);
@@ -28,9 +53,14 @@ const addUser = (ggg) => {
     usuaria.innerHTML = usuario.name;
     resultado.appendChild(usuaria);
   }); 
+=======
+const saveCohortsData = (event) => {
+    //Saving cohorts data
+   dataCohort.cohorts = JSON.parse(event.target.responseText);  
+>>>>>>> 32a131dd81a4f358ce5ff8b3cf61227c4f2d32d9
 }
-debugger
 
+<<<<<<< HEAD
 const addCohorts = (event) => {
   const data = JSON.parse(event.target.responseText);
   data.map((cohorts) => {
@@ -55,3 +85,15 @@ botonUsuarias.addEventListener('click',(e) => {
 getJSON(urlCohorts, addCohorts);
 
 
+=======
+const handleError= () => {
+ console.log('hay un error')
+};
+
+
+getData(usersData, saveUsersData);
+getData(progressData, saveProgressData);
+getData(cohortsData, saveCohortsData);
+
+console.log(getData);
+>>>>>>> 32a131dd81a4f358ce5ff8b3cf61227c4f2d32d9
