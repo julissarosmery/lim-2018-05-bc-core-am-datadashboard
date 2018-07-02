@@ -1,21 +1,4 @@
 body{
-<<<<<<< HEAD
-    font-family:sans-serif;
-} 
-#title{
-    text-decoration: underline;/*linea*/
-    text-align:center;/*centrado */
-}
-nav{
-width: 250px;
-}
-ul{
-    margin: 0px;
-    padding: 0px;
-    list-style:none;
-    line-height: 30px;
-    background: #f5f5f0;
-=======
     background: #E5B933;
     position: absolute; 
 }
@@ -29,7 +12,6 @@ ul{
     background: #F2994A;
     padding: 15%;
 }
->>>>>>> 32a131dd81a4f358ce5ff8b3cf61227c4f2d32d9
 
 .prom-2016-button {
     background: #F2994A;
