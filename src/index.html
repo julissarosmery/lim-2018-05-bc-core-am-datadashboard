@@ -8,34 +8,65 @@
   <title>Data Dashboard</title>
 </head>
 <body>
-    <h1 id="title">list cohort students Laboratoria</h1>
- 
-   
-      <select id="cohort">
-        <option> </option>
-     </select>
-     <section>
-       <ul>
-          
-            <input type="text" id="">
-            <input type="button"value="buscar" id="buscar">
-            <h2 ="respuesta"></h2>
-            <li>
-            <button id="boUsuarias">2018</button> <!-- boton de alumnas -->
-            <button id="">2016</button>
-            <button id="">2015</button>
-            <button id="">2014</button>
-         </li>
-       </ul>
-     
-    </section>
-      <ul id="resultado"><!--nombres de alumnas-->
-        
+     <h1 id="title">list cohort students Laboratoria</h1>
+   <form name="formulario1" action="#"> 
+    <select name="cosa" onchange="cambia()">
+      <option value="0">selecione
+      <option value="1">juegos
+      <option value="2">harware
+      <option value="3">sofwarwe
+      <option value="4">marcas
+    </select>
+    <select name="opt" >
+      <option value='-'>-
+    </select>
+  </form>
+   <script type="text/javascript">
+    //definir variables correspondientes:
+    var  opt_1 = new Array("-","DOM","FORSA","DOTA","...");
+    var  opt_2 = new Array("-","DOM","FORSA","DOTA","...");
+    var  opt_3 = new Array("-","DOM","FORSA","DOTA","...");
+    var  opt_4 = new Array("-","DOM","FORSA","DOTA","...");
+    //crear una funcion para permitir ejecutar el cambio dinamico:
+    function cambia(){
+      var cosa;
+      //se toma el valor de la cosa seleccionada:
+      cossa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
+      //se chequea si la cosa esta definida:
+      if(cosa !=0){
+        //selecionamos las cosas rorrectas:
+        mis_opts=eval("opt_"+cosa);
+        //se calcula el numero de cosas:
+        num_opts=mis_opts.length;
+        //marco el numero de ociones en el select:
+        document.formulario1.opt.length=num_opts;
+        //para cada opcion de array la pongo en el selec:
+        for(i=0;i<num_opts;i++){
+        document.formulario1.opt.options[i].vaule=mis_opts[i];
+        document.formulario1.opt.options[i].text=mis_opts[i];
+        }
+      }else{
+        //si no habia ninguna opcion seleccionada ,elimino las cossaas del selec
+        document.formulario1.opt.length=1;
+        //ponemos un guion en la unica opcio que he dejado:
+        document.formulario1.opt.options[0].value="-";
+        document.formulario1.opt.options[0].text="-";
+        }
+        //hacer un reset de las opts
+        document.formulario1.opt.options[0].selected=true;
+      }
 
-      </ul>
-  <script src="main.js"></script>
+
+
+    
+
+    
+    </script>
+    
+     
+  <!-- <script src="main.js"></script>
   <script src="data.js"></script>
-  <script src=""></script>
+  <script src=""></script> -->
 </body>
 
 </html>
