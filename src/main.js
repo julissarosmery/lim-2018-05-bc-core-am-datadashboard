@@ -7,6 +7,13 @@ const cuadroBuscar=document.getElementById("cuadroDeBusqueda");
 const infoMostrar=document.getElementById("informacionRequerida");
 let bucarTexto;
 
+formulario.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    infoMostrar.innerHTML='';
+    bucarTexto=cuadroBuscar.value;
+    obtCohorts();
+});
+
 const obtCohorts=()=>{
     const solicitud= new XMLHttpRequest();
     solicitud.open('GET',urlCohorts);
@@ -14,80 +21,29 @@ const obtCohorts=()=>{
     solicitud.onerror=error;
     solicitud.send();
     }
-    obtCohorts(urlCohorts);
 const error=()=>{
     console.log("se ha presentado un error");
 }
 const agreCohorts=(event)=>{
     const data=JSON.parse(event.target.responseText);
     console.log(data);
+
+    data.map((cohorts)=>{
+        let listCor=document.createElement('li');
+        listCor.innerHTML=cohorts.id;
+        infoMostrar.appendChild(listCor);
+    })
+    
+    // const articulo=data.response.docs[0];
+    // const titulo=articulo.headLine.main;
+    // const retazo=articulo.snippet;
+
+    // let li=document.createElement('li');
+    // li.className='articleClass';
+    // li.innertext=retazo;
+
+    // infoMostrar.appendChild(li);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
