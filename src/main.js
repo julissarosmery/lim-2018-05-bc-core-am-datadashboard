@@ -18,7 +18,7 @@ const progressMostrar = document.getElementById("mostrarProgress");
 
 //DATOS DE COHORTS:
 const cohortsLima = (str, datcohorts) => {
-    console.log(str,datcohorts);
+    // console.log(str,datcohorts);
     const filtroCohortLima = datcohorts.filter(ele => (ele.id.indexOf(str) > -1));
     // console.log(filtroCohortLima);
     cohortsMostrar.innerHTML = '';
@@ -34,14 +34,14 @@ const cohortsLima = (str, datcohorts) => {
 const usersLima=(str,dataUsers)=>{
     
     const filtroUsersLima=dataUsers.filter(ele=>(ele.role==='student'));
-    console.log(filtroUsersLima);
+    // console.log(filtroUsersLima);
     
     usersMostrar.innerHTML='';
     for(const element of filtroUsersLima){
-        console.log(element.role);
+        // console.log(element.role);
     console.log(element.signupCohort);
         if(element.signupCohort === str){
-            console.log(element);
+            // console.log(element);
             let listUsers=document.createElement('div');
         listUsers.setAttribute('class','chau');
         listUsers.textContent=element.name;
@@ -54,7 +54,7 @@ const usersLima=(str,dataUsers)=>{
 
 //DATOS DE PROGRESS:
 const progresCourses=(str,dataProgress)=>{
-    console.log(str,dataProgress);
+    // console.log(str,dataProgress);
 }
 //FUNCION SOLICITAR DATOS:
 const obtJson = (str, url, llamarDenuevo) => {
@@ -76,7 +76,7 @@ const error = () => {
 //LISTA DE BOTONES DESPLEGABLES:
 sedes.addEventListener('click', (event) => {
     event.preventDefault();
-    console.log(event.target.id);
+    // console.log(event.target.id);
 
     obtJson(event.target.id, urlCohorts, cohortsLima);
 
@@ -84,7 +84,7 @@ sedes.addEventListener('click', (event) => {
 //LISTA DE BOTONES EN PANTALLA:
 cohort.addEventListener('click',(event)=>{
     event.preventDefault();
-    console.log(event.target.id);
+    // console.log(event.target.id);
     
     obtJson(event.target.id,urlUser,usersLima);
     cohortsMostrar.classList.add('hidden');
