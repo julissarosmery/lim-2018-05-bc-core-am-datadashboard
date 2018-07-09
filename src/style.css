@@ -1,0 +1,87 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+#header {
+margin: auto;
+width: 2000px;
+font-family: Arial, Helvetica, sans-serif;
+}
+ul, ol {
+    list-style:none;
+}
+
+.nav li a {
+    background-color:#FFE521;
+    color:#000000;
+    text-decoration:none;
+    padding: 40px 35px;
+    display: block;
+}  
+.nav li a:hover{
+    background-color:#FF009E;
+}
+.nav > li{
+    float:left;
+}
+
+.nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+}
+
+.nav li:hover> ul{
+    display: block;
+}
+.nav li ul li{
+    position: relative;
+}
+.nav li ul li ul{
+    right: -140px;
+    top: 0px;
+}
+
+
+.hola{
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+    line-height: 30px;
+    background: #f5f5f0;
+    text-align:center; 
+    
+
+      /*borde arriba*/
+      border-top: 1px ridge rgba(30, 32, 32, 0.897);
+      /*borde derecho*/
+      border-right: 1px ridge rgba(19, 20, 20, 0.904);
+      /*borde de abajo*/
+      border-bottom: 1px ridge #171718;
+      /*borde izquierdo*/
+      border-left: 1px ridge #131414;
+      /*para centrar contenido dentro del form*/
+
+} 
+.chau{
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+    line-height: 30px;
+    background:#FF009E;
+    text-align:center; 
+    
+
+      /*borde arriba*/
+      border-top: 1px ridge rgba(30, 32, 32, 0.897);
+      /*borde derecho*/
+      border-right: 1px ridge rgba(19, 20, 20, 0.904);
+      /*borde de abajo*/
+      border-bottom: 1px ridge #171718;
+      /*borde izquierdo*/
+      border-left: 1px ridge #131414;
+      /*para centrar contenido dentro del form*/
+}
+.hidden {
+    display: none;
+}
