@@ -1,3 +1,8 @@
+
+window.computeUsersStats = (users, progress, courses) => {
+  const userWithStats = {
+    
+  }
   window.computeUsersStats=(users, progress, courses)=>{
     const lista=users.map(usersWithStats=>{
      const exercisesTotal = (progress, courses) => {
@@ -61,6 +66,8 @@
    }
    return{}   
 } )
+
+userWithStats();     
 
 window.sortUsers = () => {
 
