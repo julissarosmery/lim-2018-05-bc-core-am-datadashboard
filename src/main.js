@@ -1,40 +1,33 @@
-const urlUsersData = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
-const urlProgressData = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
-const urlCohortsData = '../data/cohorts.json';
+const usersData = '../data/cohorts/lim-2018-03-pre-core-pw/users.json'
+const progressData = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json'
+const cohortsData = '../data/cohorts.json'
 
-const options = {
-    cohort : null,
-    cohortData : {
-        users : null,
-        progress : null,
-    },
-    orderBy : 'name',
-    orderDirection : 'ASC',
-    search : ''
-}; 
+//Creating a function where the url and the onload property are parameters
+const getData = (url, onload) => {
+//xmlhttprecuest es para volver la pagina asincrona
+   let dataRequest = new XMLHttpRequest();
+   dataRequest.open('GET', url);
+   dataRequest.onload = onload;
+   dataRequest.onerror = handleError;
+   dataRequest.send();
+};
 
-const limCohort = document.getElementById('lim');
-const cdmxCohort = document.getElementById('cdmx');
-const guadCohort = document.getElementById('guad'); 
-const spauCohort = document.getElementById('spau'); 
-const chleCohort = document.getElementById('chle');
-const firstSection = document.getElementById('block-1');
-const secondSection =document.getElementById('block-2');
+//We declare the global object dataCohort, it's empty and will be fill when we call the data  
+window.dataCohort = {}
 
+const saveUsersData = (event) => {
+   //jason son los datos con los que vamos a interactuar
+   dataCohort.users = JSON.parse(event.target.responseText);
+}
 
-const getData = (string, url, callback) => {
-const xhRequest = new XMLHttpRequest;
-xhRequest.open('GET', url);
-xhRequest.addEventListener('load', (event) => {    
-    if(event.target.readyState === 4){
-        if(event.target.status !== 200){
-            return 
-                const answer = JSON.parse(event.target.responseText);
-                callback(string, answer);
-        }
-    }
-xhRequest.onerror('handleError');
-xhRequest.send();
+const saveProgressData = (event) => {
+    //Saving progress data
+   dataCohort.progress = JSON.parse(event.target.responseText);
+}
+
+const saveCohortsData = (event) => {
+    //Saving cohorts data
+   dataCohort.cohorts = JSON.parse(event.target.responseText);  
 }
 )};
 
