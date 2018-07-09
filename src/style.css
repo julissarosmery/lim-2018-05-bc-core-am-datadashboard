@@ -1,37 +1,82 @@
 body{
-    background: #E5B933;
+    background: #EDA43B;
     position: absolute; 
 }
 
-.prom-2014-button {
-    background: #F2994A;
-    padding: 15%;
+/* #block-1{} */
+
+div {
+    float: left;
+    margin-top: 20%;
+    margin-left: 11%;
 }
 
-.prom-2015-button {
-    background: #F2994A;
-    padding: 15%;
+.lim {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: #ffd700;
+    margin: 25px;
+    overflow: hidden;
+    padding: 44px;
+    border: 2px solid #955C0B;
+    cursor: pointer;
 }
 
-.prom-2016-button {
-    background: #F2994A;
-    padding: 15%;
+#block-1 lim :hover {
+    background: #FF009E;
 }
 
-.prom-2017-button {
-    background: #F2994A;
-    padding: 15%;
+.cdmx {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: #ffd700;
+    margin: 25px;
+    overflow: hidden;
+    padding: 37px;
+    border: 2px solid #955C0B;
+    cursor: pointer;
 }
 
-#prom-2018-button {
-    background: #F2994A;
-    padding: 15%;
+.guad {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: #ffd700;
+    margin: 25px;
+    overflow: hidden;
+    padding: 33px;
+    border: 2px solid #955C0B;
+    cursor: pointer;
 }
 
-#block-2 {
-    display: block;
+
+.spau {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: #ffd700;
+    margin: 25px;
+    overflow: hidden;
+    padding: 32px;
+    border: 2px solid #955C0B;
+    cursor: pointer;
 }
 
-#block-3 {
-    display: none;
+.chle {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: #ffd700;
+    margin: 25px;
+    overflow: hidden;
+    padding: 37px;
+    border: 2px solid #955C0B;
+    cursor: pointer;
 }
