@@ -29,12 +29,14 @@ const saveCohortsData = (event) => {
     //Saving cohorts data
    dataCohort.cohorts = JSON.parse(event.target.responseText);  
 }
-
-const handleError= () => {
- console.log('hay un error')
-};
+)};
 
 
-getData(usersData, saveUsersData);
-getData(progressData, saveProgressData);
-getData(cohortsData, saveCohortsData);
+
+const showCohorts = (venues, urlCohortsData, showCohorts) => { debugger
+    const limData = JSON.parse(urlCohortsData);
+    limData.forEach(element => {
+        const filterLimCohort = limData.filter(Element =>(Element.id === 'lim-2018-03-pre-core-pw'));
+    });
+         
+}

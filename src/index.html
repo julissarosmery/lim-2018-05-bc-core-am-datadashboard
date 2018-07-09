@@ -1,37 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Data Dashboard Lab</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-   <section id="block-2"> 
-    <header>SEDE LIMA</header>
-    <div>
-      <form action="search">
-        <input id="search-box" type="search" placeholder="Insert student's name">
-        <button id="search-button">Search</button>
-      </form>
-    </div>
-    <div>
-      <button class="prom-2014-button">PROM 2014</button>
-    </div>
-    <div>
-      <button class="prom-2015-button">PROM 2015</button>
-    </div>
-    <div>
-      <button class="prom-2016-button">PROM 2016</button>
-    </div>
-    <div>
-      <button class="prom-2017-button">PROM 2017</button>
-    </div>
-    <div>
-      <button id="prom-2018-button">PROM 2018</button>
-    </div>
-   </section> 
-   <section id="block-3">
-     <h1>PROMEDIOS GENERALES DEL CICLO</h1>
+   <section id="block-1">
+      <div class="lim" id="lim">LIMA</div>
+      <div class="cdmx" id="cdmx">MEXICO</div>
+      <div class="guad" id="guad">GUADALAJARA</div>
+      <div class="spau" id="spau">SAO PAULO</div>
+      <div class="chle" id="chle">CHILE</div>
+     </div> 
+   </section>
+   <section id="block-2">
+     <ul id="list-cohorts"></ul>
    </section>
    <script src="main.js"></script>
    <script src="data.js"></script>
