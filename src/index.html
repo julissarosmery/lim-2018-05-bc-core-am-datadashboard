@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
- 
-  <link rel="stylesheet" href="style.css" />
- 
-  <title>Data Dashboard</title>
+  <meta charset="utf-8" />
+  <title>ruth</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+
 </head>
 <body>
-    <h1 id="title">list cohort students Laboratoria</h1>
- 
-   
-      <select id="cohort">
-        <option> </option>
-     </select>
-     <section>
-       <ul>
-          
-            <input type="text" id="">
-            <input type="button"value="buscar" id="buscar">
-            <h2 ="respuesta"></h2>
-            <li>
-            <button id="boUsuarias">2018</button> <!-- boton de alumnas -->
-            <button id="">2016</button>
-            <button id="">2015</button>
-            <button id="">2014</button>
-         </li>
-       </ul>
-     
-    </section>
-      <ul id="resultado"><!--nombres de alumnas-->
-        
+  <header>
+      <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300" >
 
+  </header>
+<form action="search">
+  <input type="search">
+  <button >muestra los progresos</button>
+</form>
+  <hr>
+  <div id="header">
+    <ul class="nav">
+      <li> <a href="" id="formulario" >SEDES</a>
+        <ul id="sedes">
+        <li><a href="" id="lim" >lima</a></li>
+        <li><a href="" id="cdmx">ciudad de mexico</a></li>
+        <li><a href="" id="aqp">arequipa</a></li>
+        <li><a href="" id="scl" >santiago de chile</a></li>
+        <li><a href="" id="spl" >sao paulo</a></li>
       </ul>
-    
+      </li>
+    </ul>
+  </div>
+  <div  id="cohorts"class="ventanitas" >
+    <div id="mostrarCohorts"   class="cuadros"></div>
+  </div>
+
+  <div id="users" > 
+    <div id="mostrarUsers" class="cuadroUsers"></div>
+  </div>
+
+  <div>
+    <div id="mostrarProgress" class="cuadrosprogress" ></div>
+  </div>
+  
   <script src="main.js"></script>
   <script src="data.js"></script>
- 
-  <script src=""></script>
+  
+  
 </body>
-
 </html>
