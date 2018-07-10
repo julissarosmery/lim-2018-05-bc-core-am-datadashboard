@@ -1,4 +1,12 @@
 
+window.computeUsersStats = (users, progress, courses) => {
+  const userWithStats = {
+    
+  }
+  window.computeUsersStats=(users, progress, courses)=>{
+    const lista=users.map(usersWithStats=>{
+     const exercisesTotal = (progress, courses) => {
+
 window.computerUsersStats = (users, progress, courses) => {
     const dataUsers = users;
     const dataProgress = progress;
@@ -43,87 +51,65 @@ window.computerUsersStats = (users, progress, courses) => {
                 const exercises = Object.values(part.exercises);
               exercises.map(exercises => typeof exercise === 'number' ? calculateData(exercise) : calculateData(exercise['completed']))
   
-              })
-              breack;
-              case 'read':
-              parts.map(part => calculateData(part['completed']));
-              break;
-              case'quiz':
-              parts.map(part => {
-  
-              })
-              break;
-            }
-  
-          })
-        };
-        return completedByCourses;
-      });
-  
-  
-      let response = {
-        total,
-        completed,
-        percent : total !== 0 ? Math.round(completed * 100 / total) : 0,
-      };
-        if (type === 'quiz'){
-          response.scoreAvg = totalCompletedQuizzes !== 0 ? Math.round(scoreSun = totalCompletedQuizzes ): 0;
-        }
-        
-        return response; 
-      
-        }
-      
-  
-  
-  
-     
-  //FILTARAR ROL DE ESTUDIANTES:PERFECTA  
-    let students = dataUsers.filter(user => user.role ==='student');
-  
-   //RECORRER EL ROL DE ESTUDIANTES:
-    students = students.map( user => {
-      const userProgress = dataProgress[user.id];
-      let percent = calculatePercent(userProgress);
-      let exercises = calculateStats(userProgress, 'practica');
-      let reads = calculateStats(userProgress, 'read');
-      let quizzes = calculateStats(userProgress, 'quiz');
-      return ({
-        id: user.id,
-        name: user.name.toUpperCase(),
-        stats: {
-          percent: percent,
-          exercises:exercises,
-          reads:reads,
-          quizzes:quizzes,
-        },
-      })
-  });
-    return students;
-  }
-  
-  
-  
-  
-  
-  
-  window.sortUsers = (users, orderBy, orderDirection) => {
-  
-  }
-  window.filterUsers = (users, search) => {
-  
-  }
-  window.progressCohortData = (options) =>{ //PERFECTA.
-    console.log(options);
-    const courses = Object.keys(options.cohort.coursesIndex);
-    // const [users,progress]=cohortData;
-    console.log(courses);
-  
-    let students = computerUsersStats(options.cohortData.users, options.cohortData.progress, courses);
-    // students = sortUsers(students,orderBy,orderDirection);
-    // search ? students = filterUsers(students,search) : null;
-  
-  
-  
-  }
-  
+
+ try {
+   usersWithStats.stats = {
+       percent: progress[usersWithStats.id].intro.percent,
+       exercises: {
+           total: exercisesTotal(progress[usersWithStats.id], courses),
+           completed: exercisesCompleted(progress[usersWithStats.id], courses),
+          
+           completed:
+           percentd:
+           }
+           reads:{
+           total:
+           completed:
+           percent:
+                 
+           }
+           quizzes:{
+            
+          total:
+
+
+
+
+          
+          completed:
+          percent:
+          scoresum:
+          scoreAvg:
+           }  
+              
+       }
+     }
+  catch{
+
+   }
+   return{}   
+} )
+
+userWithStats();     
+
+window.sortUsers = () => {
+
+}
+
+window.filterUsers = () => {
+
+}
+
+window.processCohortData = () => {
+
+}
+
+
+
+
+//Buttons
+const button2018Function = 
+document.getElementById('prom-2018-button').addEventListener('click', () => {
+document.getElementById('block-2').style.display = 'none';
+document.getElementById('block-3').style.display = 'block';
+});
