@@ -34,6 +34,9 @@ const cohortsLima = (str, datcohorts) => {
 //DATOS DE USERS::
 const usersLima = (str, dataUsers) => {
 
+    // 
+    computerUsersStats(dataUsers, progress, courses);
+
     const filtroUsersLima = dataUsers.filter(ele => (ele.role === 'student'));
     // console.log(filtroUsersLima);
     usersMostrar.innerHTML = '';
@@ -42,20 +45,20 @@ const usersLima = (str, dataUsers) => {
         // console.log(element.signupCohort);
         if (element.signupCohort === str) {
             // console.log(element);
-            let listUsers = document.createElement('div');
+            let listUsers = document.createElement('p');
             listUsers.setAttribute('class', 'chau');
             listUsers.textContent = element.name;
             usersMostrar.appendChild(listUsers);
         }
 
     }
-    // return usersMostrar
+    return usersMostrar
 }
 
 //DATOS DE PROGRESS:
 const progressCourses = (str, dataProgress) => {
 
-    let dataProgress2 = Object.keys(dataProgress);
+    let dataProgress2 = Object.keys(dataProgress)===;
     usersMostrar.innerHTML = '';
     console.log(dataProgress2);
     for (const element of dataProgress2) {
@@ -104,12 +107,13 @@ cohort.addEventListener('click', (event) => {
     cohortsMostrar.classList.add('hidden');
 
 })
-//LISTA DE BOTONES  CLICK EN NONBRES:
-users.addEventListener('click', (event) => {
-    event.preventDefault();
-    obtJson(event.target, urlProgress, progressCourses);
+// //LISTA DE BOTONES  CLICK EN NONBRES:
+// users.addEventListener('click', (event) => {
+//     event.preventDefault();
+    
+//    createRole();
 
-})
+// })
 
 
 
@@ -124,6 +128,7 @@ users.addEventListener('click', (event) => {
 //     search : ''
 // }; 
 //botones en pantalla:
+
 
 
 
