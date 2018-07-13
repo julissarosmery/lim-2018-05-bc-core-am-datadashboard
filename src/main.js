@@ -112,16 +112,13 @@ sedes.addEventListener('click', (event) => {
 })
 cohortsMostrar.addEventListener('click', (event) => {
 
-   options.cohort.forEach(element => {
-   if (element.id === event.target.id){
-     options.cohort = element;
+   const cohortSeleccionado = options.cohort.filter(element => {
+   if (element.id === "lim-2018-03-pre-core-pw"){
+     options.cohort = element.id;
      
    }
-  
-
   });
-  console.log(options);
-  
+  options.cohort(cohortSeleccionado[0]);
   obtJson(event.target.id, urlUser, addUsers);
 
 })
