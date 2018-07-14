@@ -1,42 +1,228 @@
-const usersData = '../data/cohorts/lim-2018-03-pre-core-pw/users.json'
-const progressData = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json'
-const cohortsData = '../data/cohorts.json'
+const sedes = document.querySelector('#sedes');
+// const cohort = document.querySelector('#cohorts');
 
-//Creating a function where the url and the onload property are parametersg
-const getData = (url, onload) => {
-//xmlhttprecuest es para volver la pagina asincrona
-   let dataRequest = new XMLHttpRequest();
-   dataRequest.open('GET', url);
-   dataRequest.onload = onload;
-   dataRequest.onerror = handleError;
-   dataRequest.send();
+
+
+const urlCohorts = "../data/cohorts.json";
+const urlUser = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+const urlProgress = "../data/cohorts/lim-2018-03-pre-core-pw/progress.json";
+
+const cohortsMostrar = document.getElementById('mostrarCohorts');
+// const usersmostrar = document.getElementById('mostrarUsers');
+
+const options = {
+  cohort: null,
+  cohortData: {
+    users: null,
+    progress: null,
+  },
+  orderBy: 'name',
+  orderDirection: 'ASC',
+  search: ''
 };
 
-//We declare the global object dataCohort, it's empty and will be fill when we call the data  
-window.dataCohort = {}
 
-const saveUsersData = (event) => {
-   //jason son los datos con los que vamos a interactuar
-   dataCohort.users = JSON.parse(event.target.responseText);
+
+// HY ORDER FUNCION PARA SOLICITAR DATOS:
+const obtJson = (str, url, llamarDenuevo) => {
+  const solicitud = new XMLHttpRequest();
+  solicitud.open('GET', url, true);
+  solicitud.addEventListener('load', event => {
+    if (event.target.readyState === 4 && event.target.status === 200) {
+      const response = (JSON.parse(event.target.responseText));
+      llamarDenuevo(str, response)
+    }
+  });
+  solicitud.onerror = error;
+  solicitud.send();
+}
+const error = () => {
+  console.log("oh my god que es estoooo..a ocurrido un error!!");
 }
 
-const saveProgressData = (event) => {
-    //Saving progress data
-   dataCohort.progress = JSON.parse(event.target.responseText);
+
+//FUNCION PARA LLAMAR ACOHORTS:
+const addCohorts = (sedesHtml, datacohorts) => {
+  // console.log(sedesHtml , datacohorts);
+  options.cohort = datacohorts;
+  // console.log(options);
+//   // usersmostrar.innerHTML = '';
+  const datosCohortsFiltrados = datacohorts.filter(fCohort => {
+    return fCohort.id.indexOf(sedesHtml) !== -1;
+  });
+  // console.log(datosCohortsFiltrados);
+  cohortsMostrar.innerHTML = '';
+  for (const fCohort of datosCohortsFiltrados) {
+    cohortsMostrar.innerHTML+='';
+
+    let listCohorts = document.createElement('div');
+    listCohorts.setAttribute('class', 'chau');
+    listCohorts.textContent = fCohort.id;
+    cohortsMostrar.appendChild(listCohorts);
+
+
+  }
+
+}
+// //FUNCION PARA LLAMAR A PROGRESS:
+const addProgress = (usersName, dataProgress) => {
+  // console.log(usersName, dataProgress);
+  options.cohortData.progress = dataProgress;
+  // console.log(options);
+  processCohortData(options);
+};
+
+
+// // FUNCION PARA LLLAMAR A LOS USERS:    
+const addUsers = (usersName, dataUsers) => {
+  // console.log(dataUsers);
+  options.cohortData.users = dataUsers;
+  // console.log(options);
+  obtJson(usersName, urlProgress, addProgress);
+//   // cohortsMostrar.innerHTML='';
+//   // const filtroUsersLima=dataUsers.filter(users=>(users.role==='student'));
+//   // console.log(filtroUsersLima);
+//   // for(const users of filtroUsersLima){
+//   // let listUsers=document.createElement('div');
+//   // listUsers.setAttribute('class','chau');
+//   // listUsers.textContent=users.name;
+//   // usersmostrar.appendChild(listUsers);
+
+//   //     }
+// }
+// //     //FUNCION PARA LLAMAR A LOS PROGRESOS:
+// //     const addProgress=(srt,dataProgress)=>{
+// //         let dataProgress2 = Object.keys(dataProgress);
+// //         console.log(dataProgress2);    
+// //     }
+// //     // obtJson(event.target.id, urlProgress, addProgress);
 }
 
-const saveCohortsData = (event) => {
-    //Saving cohorts data
-   dataCohort.cohorts = JSON.parse(event.target.responseText);  
-}
-)};
+
+
+// sedes.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     obtJson(event.target.id, urlCohorts, addCohorts);
+
+sedes.addEventListener('click', (event) => {
+
+  obtJson(event.target.id, urlCohorts, addCohorts);
+// console.log(event.target);
+
+
+})
+cohortsMostrar.addEventListener('click', (event) => {
+
+  const cohortSeleccionado =  options.cohort.filter(ele => {
+    if(ele.id === "lim-2018-03-pre-core-pw"){
+      return ( ele.id);
+      options.cohort = ele.id;
+    }
+  })
+
+  console.log(cohortSeleccionado[0]);
+  
+  options.cohort = cohortSeleccionado[0]
+// console.log(options);
+  obtJson(event.target.id, urlUser, addUsers);
+
+})
+
+
+// const sedes = document.querySelector('#sedes');
+// // const cohort = document.querySelector('#cohorts');
 
 
 
-const showCohorts = (venues, urlCohortsData, showCohorts) => { debugger
-    const limData = JSON.parse(urlCohortsData);
-    limData.forEach(element => {
-        const filterLimCohort = limData.filter(Element =>(Element.id === 'lim-2018-03-pre-core-pw'));
-    });
-         
-}
+// const urlCohorts = "../data/cohorts.json";
+// const urlUser = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+// const urlProgress = "../data/cohorts/lim-2018-03-pre-core-pw/progress.json";
+
+// const cohortsMostrar = document.getElementById('mostrarCohorts');
+// const usersmostrar = document.getElementById('mostrarUsers');
+
+// const options = {
+//   cohort: null,
+//   cohortData: {
+//     users: null,
+//     progress: null,
+//   },
+//   orderBy: 'name',
+//   orderDirection: 'ASC',
+//   search: ''
+// };
+
+
+
+// // HY ORDER FUNCION PARA SOLICITAR DATOS:
+// const obtJson = (str, url, llamarDenuevo) => {
+//   const solicitud = new XMLHttpRequest();
+//   solicitud.open('GET', url, true);
+//   solicitud.addEventListener('load', event => {
+//     if (event.target.readyState === 4 && event.target.status === 200) {
+//       const response = (JSON.parse(event.target.responseText));
+//       llamarDenuevo(str, response)
+//     }
+//   });
+//   solicitud.onerror = error;
+//   solicitud.send();
+// }
+// const error = () => {
+//   console.log("oh my god que es estoooo..a ocurrido un error!!");
+// }
+
+
+// //FUNCION PARA LLAMAR ACOHORTS:
+// const addCohorts = (sedesHtml, datacohorts) => {
+//   options.cohort = datacohorts;
+//   const datosCohortsFiltrados = datacohorts.filter(fCohort => {
+//     return fCohort.id.indexOf(sedesHtml) !== -1;
+//   });
+//   cohortsMostrar.innerHTML = '';
+//   for (const fCohort of datosCohortsFiltrados) {
+//     cohortsMostrar.innerHTML+='';
+
+//     let listCohorts = document.createElement('div');
+//     listCohorts.setAttribute('class', 'chau');
+//     listCohorts.textContent = fCohort.id;
+//     cohortsMostrar.appendChild(listCohorts);
+
+
+//   }
+
+// }
+// // //FUNCION PARA LLAMAR A PROGRESS:
+// const addProgress = (usersName, dataProgress) => {
+//   options.cohortData.progress = dataProgress;
+// //   // processCohortData(options);
+// };
+
+
+// // // FUNCION PARA LLLAMAR A LOS USERS:    
+// const addUsers = (usersName, dataUsers) => {
+//   options.cohortData.users = dataUsers;
+//   obtJson(usersName, urlProgress, addProgress);
+
+// }
+
+// sedes.addEventListener('click', (event) => {
+
+//   obtJson(event.target.id, urlCohorts, addCohorts);
+
+
+// })
+// cohortsMostrar.addEventListener('click', (event) => {
+
+//    options.cohort.forEach(element => {
+//    if (element.id === event.target.id){
+//      options.cohort = element;
+     
+//    }
+  
+
+//   });
+//   console.log(options);
+  
+//   obtJson(event.target.id, urlUser, addUsers);
+
+// })
