@@ -1,82 +1,73 @@
-body{
-    background: #EDA43B;
-    position: absolute; 
+* {
+    padding: 0px;
+    margin: 0px;
+}
+#header{
+/* margin: 20px 80px; */
+width: 100px 100px;
+font-family: Arial, Helvetica, sans-serif;
+}
+.nav ul, li  ul{
+    list-style:none;
+
 }
 
-/* #block-1{} */
+ul ,li{
+    background-color:rgb(233, 185, 27);
+    color: #fff;
+    text-decoration:none;
+    padding: 20px 20px;
+    display: block;
+}  
+  .nav li :hover{
+    background-color:#3b3207;
+}
+/* .nav li ul{
+    float:left;
+} */
 
-div {
-    float: left;
-    margin-top: 20%;
-    margin-left: 11%;
+.nav ul{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    
 }
 
-.lim {
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    background: #ffd700;
-    margin: 25px;
-    overflow: hidden;
-    padding: 44px;
-    border: 2px solid #955C0B;
-    cursor: pointer;
+.nav li:hover> ul{
+    display: block;
 }
-
-#block-1 lim :hover {
-    background: #FF009E;
+/* .nav li ul li{
+    /* position: relative; */
+/* } */ 
+.nav li ul li ul{
+    right: 200px;
+    top: 100px;
 }
+ /* .chau{ */
+    /* achica desde los costados */
+    /* margin: 80px 80px ; */
+    /* ancho vertical */
+    /* padding: 50px; */
+    /* ancho horizontal */
+    /* width: 80px; */
+    /* min-width: 0px; */
 
-.cdmx {
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    background: #ffd700;
-    margin: 25px;
-    overflow: hidden;
-    padding: 37px;
-    border: 2px solid #955C0B;
-    cursor: pointer;
-}
+/* }  */
+.chau{
+ /* font: bold 15px tahoma; */
+    /* width: 150px; */
+    /* margin: 20px auto;  */
 
-.guad {
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    background: #ffd700;
-    margin: 25px;
-    overflow: hidden;
-    padding: 33px;
-    border: 2px solid #955C0B;
-    cursor: pointer;
-}
-
-
-.spau {
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    background: #ffd700;
-    margin: 25px;
-    overflow: hidden;
-    padding: 32px;
-    border: 2px solid #955C0B;
-    cursor: pointer;
-}
-
-.chle {
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    background: #ffd700;
-    margin: 25px;
-    overflow: hidden;
-    padding: 37px;
-    border: 2px solid #955C0B;
-    cursor: pointer;
+    background-color:#56F89A;
+    border: 2px solid #000000;
+    /* margenes con respecto a los costados */
+     /* padding: 50px; */
+    text-align: center; 
+    /* margin: 20px auto;  */
+    /* ancho */
+     /* width: 500px ; */
+    /* tamaño de la letra */
+    /* font: bold 15px tahoma; */
+     display: block;  
+     float: initial;
 }
