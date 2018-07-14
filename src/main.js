@@ -2,7 +2,7 @@ const usersData = '../data/cohorts/lim-2018-03-pre-core-pw/users.json'
 const progressData = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json'
 const cohortsData = '../data/cohorts.json'
 
-//Creating a function where the url and the onload property are parameters
+//Creating a function where the url and the onload property are parametersg
 const getData = (url, onload) => {
 //xmlhttprecuest es para volver la pagina asincrona
    let dataRequest = new XMLHttpRequest();
