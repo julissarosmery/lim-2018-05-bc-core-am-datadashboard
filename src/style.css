@@ -1,7 +1,6 @@
 * {
     padding: 0px;
     margin: 0px;
-<<<<<<< HEAD
 }
 #header{
 /* margin: 20px 80px; */
@@ -141,18 +140,6 @@ ul, ol {
       /*borde izquierdo*/
       border-left: 1px ridge #131414;
       /*para centrar contenido dentro del form*/
-=======
-}
-#header{
-/* margin: 20px 80px; */
-width: 100px 100px;
-font-family: Arial, Helvetica, sans-serif;
-}
-.nav ul, li  ul{
-    list-style:none;
-
-}
->>>>>>> e32b28a7d33bd926780e1d3eb40b2cc524ad2933
 
 ul ,li{
     background-color:rgb(233, 185, 27);
