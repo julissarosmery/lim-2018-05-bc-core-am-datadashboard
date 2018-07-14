@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
- 
-  <link rel="stylesheet" href="style.css" />
- 
-  <title>Data Dashboard</title>
-      <style type="text/style.css"></style>
+  <meta charset="utf-8" />
+  <title>ruth</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+
 </head>
 <body>
-     <h1 id="title">list cohort students Laboratoria</h1>
-   <form name="cohorts" action="#"> 
-    <select class="seleccion"name="listCohorts" onchange="cambia()">
-      <option value="0">selecione
-      <option value="1">arequipa
-      <option value="2">ciudad de mexico
-      <option value="3">santiago de chile
-      <option value="4">lima
-    </select>
-    <select class="seleccion" name="quees" >
-      <option value='-'>-
-    </select>
-  </form>
-  <!-- <form name="formulario1" action="#"> 
-      <select class="seleccion"name="cosa" onchange="cabio()">
-        <option value="0">selecione
-        <option value="1">arequipa
-        <option value="2">ciudad de mexico
-        <option value="3">santiago de chile
-        <option value="4">lima
-      </select>
-      <select class="seleccion" name="opt" >
-        <option value='-'>-
-      </select>
-    </form>
-  -->
-    
-     
-  <script src="main.js"></script>
-  <script src="data.js"></script> 
-</body>
+  <header>
+      <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300" >
 
+  </header>
+<form action="search">
+  <input type="search">
+  <button >muestra los progresos</button>
+</form>
+  <hr>
+  <div id="header">
+    <ul class="nav">
+      <li> <a href="" id="formulario" >SEDES</a>
+        <ul id="sedes">
+        <li><a href="" id="lim" >lima</a></li>
+        <li><a href="" id="cdmx">ciudad de mexico</a></li>
+        <li><a href="" id="aqp">arequipa</a></li>
+        <li><a href="" id="scl" >santiago de chile</a></li>
+        <li><a href="" id="spl" >sao paulo</a></li>
+      </ul>
+      </li>
+    </ul>
+  </div>
+  <div  id="cohorts"class="ventanitas" >
+    <div id="mostrarCohorts"   class="cuadros"></div>
+  </div>
+
+  <div id="users" > 
+    <div id="mostrarUsers" class="cuadroUsers"></div>
+  </div>
+
+  <div>
+    <div id="mostrarProgress" class="cuadrosprogress" ></div>
+  </div>
+  
+  <script src="main.js"></script>
+  <script src="data.js"></script>
+  
+  
+</body>
 </html>
