@@ -1,24 +1,55 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Data Dashboard Lab</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-   <section id="block-1">
-      <div class="lim" id="lim">LIMA</div>
-      <div class="cdmx" id="cdmx">MEXICO</div>
-      <div class="guad" id="guad">GUADALAJARA</div>
-      <div class="spau" id="spau">SAO PAULO</div>
-      <div class="chle" id="chle">CHILE</div>
-     </div> 
-   </section>
-   <section id="block-2">
-     <ul id="list-cohorts"></ul>
-   </section>
-   <script src="main.js"></script>
-   <script src="data.js"></script>
-  </body>
-</html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300" >
+
+</head>
+
+<body>
+
+  <div id="header">
+    <ul class="nav">
+      <li id="formulario">SEDES:
+        <ul id="sedes">
+          <li id="lim">Lima</li>
+          <li id="cdmx">Ciudad De Mexico</li>
+          <li id="aqp">Arequipa</li>
+          <li id="scl">Santiago De Chile</li>
+          <li id="spl">Sao Paulo</li>
+          <li id="gdl">Guadalajara</li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="cohorts" class="ventanitas">
+    <div id="mostrarCohorts" class="cuadros"></div>
+  </div>
+
+  <div id="users" >
+    <div id="mostrarUsers" class="cuadroUsers"></div>
+  </div>
+
+  <div>
+    <div id="mostrarProgress" class="cuadrosProgress"></div>
+  </div>
+
+
+  <script src="main.js"></script>
+  <script src="data.js"></script>
+
+</body>
+
+</html> 
+
+
+
+
+
+
+
