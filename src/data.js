@@ -1,6 +1,6 @@
 window.computeUsersStats = (users, progress, courses) => {
-    // const datosUsuarias = users;
-    // const datosProgresos = progress;
+    const datosUsuarias = users;
+    const datosProgresos = progress;
     // console.log(datosProgresos);
   
     const calculandoPorcentaje = progresoDeCadaUsuaria => {
