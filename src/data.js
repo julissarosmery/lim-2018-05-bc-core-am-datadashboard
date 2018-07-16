@@ -1,62 +1,96 @@
-window.computeUsersStats=(users,progress,courses)=>{
-    const datosUsuarias = users;
-    const datosProgresos = progress;
-    
-    const calcularPorcentaje = user =>{
-    let contador=0;
-    let porcentajeDeCursos=[];
-    courses.map(curso => {
-    if(user [curso]){
-    
-    
-         
+const sedes = document.querySelector('#sedes');
+const espacioBuscar = document.getElementById('search');
+
+const urlCohorts = "../data/cohorts.json";
+const urlUser = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+const urlProgress = "../data/cohorts/lim-2018-03-pre-core-pw/progress.json";
+
+const cohortsMostrar = document.getElementById('mostrarCohorts');
+
+const options = {
+  cohort: null,
+  cohortData: {
+    users: null,
+    progress: null,
+  },
+  orderBy: 'name',
+  orderDirection: 'ASC',
+  search: ''
+};
+
+
+
+// HY ORDER FUNCION PARA SOLICITAR DATOS:
+const obtJson = (str, url, llamarDenuevo) => {
+  const solicitud = new XMLHttpRequest();
+  solicitud.open('GET', url, true);
+  solicitud.addEventListener('load', event => {
+    if (event.target.readyState === 4 && event.target.status === 200) {
+      const response = (JSON.parse(event.target.responseText));
+      llamarDenuevo(str, response)
     }
-    })
+  });
+  solicitud.onerror = error;
+  solicitud.send();
+}
+const error = () => {
+  console.log("oh my god que es estoooo..a ocurrido un error!!");
+}
+// 1 . FUNCION PARA LLAMAR ACOHORTS:
+const addCohorts = (sedesHtml, datacohorts) => {
+  options.cohort = datacohorts;
+  // usersmostrar.innerHTML = '';
+  const datosCohortsFiltrados = datacohorts.filter(fCohort => {
+    return fCohort.id.indexOf(sedesHtml) !== -1;
+  });
+  cohortsMostrar.innerHTML = '';
+  for (const fCohort of datosCohortsFiltrados) {
+    cohortsMostrar.innerHTML += '';
+    let listCohorts = document.createElement('div');
+    listCohorts.setAttribute('class', 'chau');
+    listCohorts.textContent = fCohort.id;
+    cohortsMostrar.appendChild(listCohorts);
+  }
+}
+// 3 . FUNCION PARA LLAMAR A PROGRESS:
+const addProgress = (usersName, dataProgress) => {
+  options.cohortData.progress = dataProgress;
+  const arrResult= processCohortData(options);
+  console.log(arrResult);
+  cohortsMostrar.innerHTML ='';    
+  for(const students of arrResult){
+cohortsMostrar.innerHTML+=
+` <div class="cohort">
+    <p>${students.name}</p>
+    <p>excercises:${students.stats.exercises.percent}</p>
+    <p>reads:${students.stats.reads.percent}</p>
+    <p>quizzes:${students.stats.quizzes.percent}</p>
+    <p>percent:${students.stats.percent}</p>
+    </div>`
+  }
+};
+// 2 .  FUNCION PARA LLLAMAR A LOS USERS:    
+const addUsers = (usersName, dataUsers) => {
+  options.cohortData.users = dataUsers;
+  obtJson(usersName, urlProgress, addProgress);
+}
+
+
+
+
+
+sedes.addEventListener('click', (event) => {
+  obtJson(event.target.id, urlCohorts, addCohorts);
+})
+cohortsMostrar.addEventListener('click', (event) => {
+  const cohortSeleccionado = options.cohort.filter(ele => {
+    if (ele.id === "lim-2018-03-pre-core-pw") {
+      return (ele.id);
+      options.cohort = ele.id;
     }
-    
-    const calculandoStadisticas=(usuaria,typo)=>{
-    
-    }
-    //filtar usuarias :
-    let students = datosUsuarias.filter(usu=>usu.role === "student");
-    // console.log(students);
-    //mapeando usuarias:
-    students = students.map(usu=>{ 
-        //vinculamos usuarios y progreso por el id . que es lo que ambos tienen:
-    const usuariasProgreso = datosProgresos[usu.id];
-    console.log(usuariasProgreso);
-    let percent = calculandoPorcentaje(usuariasProgreso);
-    let execises =  calculandoStadisticas(usuariasProgreso,"practice");
-    let reads = calculandoStadisticas(usuariasProgreso,"reads");
-    let quizzes = calculandoStadisticas(usuariasProgreso,"quizzes");
-    return ({
-    //     id:usu.id,
-    //     name:usu.name.toUpperCase(),
-    
-        stats:{
-            percent:percent,
-            exercises:excercises,
-            reads:reads,
-            quizzes:quizzes
-        },
-    })
-    });
-    return students;
-    }
-    
-    window.sortUsers=(users,orderBy,orderDirection)=>{
-    
-    }
-    window.filterUsers=(users,search)=>{
-    
-    }
-    window.processCohortData = (options) => {
-        // console.log(options);
-    const courses=Object.keys(options.cohort.coursesIndex);
-    // console.log(courses);
-        
-        let students = computeUsersStats(options.cohortData.users,options.cohortData.progress,courses);
-        // students=sortUsers(users,orderBy,orderDirection);
-        // search ? students=filterUsers(users,search):null;
-        // console.log(options);
-    }
+  })
+  options.cohort = cohortSeleccionado[0];
+  // console.log(options);
+  obtJson(event.target.id, urlUser, addUsers);
+})
+

@@ -71,3 +71,21 @@ ul ,li{
      display: block;  
      float: initial;
 }
+.cohort{
+    /* font: bold 15px tahoma; */
+       /* width: 150px; */
+       /* margin: 20px auto;  */
+   
+       background-color:#56F89A;
+       border: 2px solid #792424;
+       /* margenes con respecto a los costados */
+        /* padding: 50px; */
+       text-align: center; 
+       /* margin: 20px auto;  */
+       /* ancho */
+        /* width: 500px ; */
+       /* tamaño de la letra */
+       /* font: bold 15px tahoma; */
+        display: block;  
+        float: initial;
+   }
