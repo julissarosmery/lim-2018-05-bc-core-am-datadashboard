@@ -120,27 +120,22 @@ window.computeUsersStats = (users, progress, courses) => {
   // window.sortUsers = (users, orderBy, orderDirection) => {
   
   // }
-  // window.filterUsers = (users, search) => {debugger
-  //   console.log(users);
-  //   console.log(search);
+  window.filterUsers = (users, search) => {debugger
+    console.log(users);
     
-  
-  // const usuariasFiltradas=users.filter(user =>{
-  //   return user.indexOf(search.toUpperCase())> -1;
-  // })
-  // return usuariasFiltradas;
-  // }
-  
+        const userFilter = users.filter(user => {
+          return user.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        });
+        return userFilter;
+      }
   
   window.processCohortData = (options) => {
-    // console.log(options);
     const courses = Object.keys(options.cohort.coursesIndex);//el objet.keys devuelve un array:
-    // console.log(courses);
     let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
-    // students = sortUsers(users,orderBy,orderDirection);
-    // search ? students=filterUsers(users,search):null;
-    // console.log(users);
-    // console.log(search);
+    //students = sortUsers(users,orderBy,orderDirection);
+     options.cohortData.search ? students = filterUsers(options.cohortData.users,options.search):students;
+    //console.log(filterUsers);
+    //console.log(search);
     
     // console.log(options.cohortData.users,options.cohortData.progress,courses);
   return students;

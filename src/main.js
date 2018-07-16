@@ -17,6 +17,16 @@ const options = {
   orderDirection: 'ASC',
   search: ''
 };
+// espacioBuscar.addEventListener('input',(event)=>{
+//   options.search = espacioBuscar.value;
+
+//   console.log(options.search);
+//   const pintaFiltro = processCohortData(options);
+//   console.log(pintaFiltro);
+//   cohortsMostrar.innerHTML='';
+//   pintar(pintaFiltro);
+
+// });
 
 
 
@@ -57,31 +67,38 @@ const addProgress = (usersName, dataProgress) => {
   options.cohortData.progress = dataProgress;
   const arrResult= processCohortData(options);
   console.log(arrResult);
-  cohortsMostrar.innerHTML ='';    
-  for(const students of arrResult){
-cohortsMostrar.innerHTML+=
-` <div class="cohort">
-    <p>${students.name}</p>
-    <p>excercises:${students.stats.exercises.percent}</p>
-    <p>reads:${students.stats.reads.percent}</p>
-    <p>quizzes:${students.stats.quizzes.percent}</p>
-    <p>percent:${students.stats.percent}</p>
-    </div>`
-  }
+  cohortsMostrar.innerHTML =''; 
+  pintar(arrResult);
+
 };
+
 // 2 .  FUNCION PARA LLLAMAR A LOS USERS:    
 const addUsers = (usersName, dataUsers) => {
   options.cohortData.users = dataUsers;
   obtJson(usersName, urlProgress, addProgress);
 }
+// FUNCION DE PINTADO:
+const pintar=(datos)=>{
+  for(const students of datos){
+    cohortsMostrar.innerHTML+=
+    ` <div class="cohort">
+        <p>${students.name}</p>
+        <p>excercises:${students.stats.exercises.percent}</p>
+        <p>reads:${students.stats.reads.percent}</p>
+        <p>quizzes:${students.stats.quizzes.percent}</p>
+        <p>percent:${students.stats.percent}</p>
+        </div>`
+      }
+    }
 
 
-
-
+//EVENTO # 1:
 
 sedes.addEventListener('click', (event) => {
   obtJson(event.target.id, urlCohorts, addCohorts);
 })
+
+// EVENTO # 2:
 cohortsMostrar.addEventListener('click', (event) => {
   const cohortSeleccionado = options.cohort.filter(ele => {
     if (ele.id === "lim-2018-03-pre-core-pw") {
