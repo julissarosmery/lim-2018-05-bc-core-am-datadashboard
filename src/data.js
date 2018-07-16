@@ -136,7 +136,9 @@ window.computeUsersStats = (users, progress, courses) => {
         let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
         //students = sortUsers(users,orderBy,orderDirection);
          options.cohortData.search ? students = filterUsers(options.cohortData.users,options.search):students;
-              
+        //console.log(filterUsers);
+        console.log(options.search);
+        
         // console.log(options.cohortData.users,options.cohortData.progress,courses);
       return students;
         

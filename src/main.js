@@ -19,24 +19,19 @@ const options = {
   search: ''
 };
 
-// const pasarDatos=(users,progress,cohort)=>{
-
-// }
 
 
 espacioBuscar.addEventListener('input',(event)=>{
   options.search = event.target.value;  
-  const pintaFiltro = processCohortData(options);
+  console.log(options.search);
+  const pintaFiltro = filterUsers(processCohortData(options),options.search);
   console.log(pintaFiltro);
-const filtersMostrar = document.getElementById('mostrarFilters');
-
   cohortsMostrar.innerHTML='';
-  pintaFiltro.forEach(students => {
-    console.log(students);
-    filtersMostrar.innerHTML+=
-    pintar(pintaFiltro);
-  
-  })
+  pintar(pintaFiltro);
+/* pintaFiltro.forEach(element => {
+  console.log (element);
+  pintar(pintaFiltro);
+}); */
 })
 
 
@@ -77,7 +72,8 @@ const addCohorts = (sedesHtml, datacohorts) => {
 const addProgress = (usersName, dataProgress) => {
   options.cohortData.progress = dataProgress;
   const arrResult= processCohortData(options);
-  console.log(arrResult);
+  //console.log(arrResult);
+  cohortsMostrar.innerHTML='';
   // cohortsMostrar.innerHTML =''; 
   pintar(arrResult);
 
@@ -90,8 +86,9 @@ const addUsers = (usersName, dataUsers) => {
 }
 // FUNCION DE PINTADO:
 const pintar=(datos)=>{
-  cohortsMostrar.innerHTML='';
-  for(const students of datos){
+  //for(let i= 0;i<datos.length;i++){
+    // console.log(datos);
+   for(const students of datos){
     cohortsMostrar.innerHTML+=
     ` <div class="cohort">
         <p>${students.name}</p>
