@@ -7,6 +7,7 @@ const urlProgress = "../data/cohorts/lim-2018-03-pre-core-pw/progress.json";
 
 const cohortsMostrar = document.getElementById('mostrarCohorts');
 
+
 const options = {
   cohort: null,
   cohortData: {
@@ -17,16 +18,26 @@ const options = {
   orderDirection: 'ASC',
   search: ''
 };
-// espacioBuscar.addEventListener('input',(event)=>{
-//   options.search = espacioBuscar.value;
 
-//   console.log(options.search);
-//   const pintaFiltro = processCohortData(options);
-//   console.log(pintaFiltro);
-//   cohortsMostrar.innerHTML='';
-//   pintar(pintaFiltro);
+// const pasarDatos=(users,progress,cohort)=>{
 
-// });
+// }
+
+
+espacioBuscar.addEventListener('input',(event)=>{
+  options.search = event.target.value;  
+  const pintaFiltro = processCohortData(options);
+  console.log(pintaFiltro);
+const filtersMostrar = document.getElementById('mostrarFilters');
+
+  cohortsMostrar.innerHTML='';
+  pintaFiltro.forEach(students => {
+    console.log(students);
+    filtersMostrar.innerHTML+=
+    pintar(pintaFiltro);
+  
+  })
+})
 
 
 
@@ -67,7 +78,7 @@ const addProgress = (usersName, dataProgress) => {
   options.cohortData.progress = dataProgress;
   const arrResult= processCohortData(options);
   console.log(arrResult);
-  cohortsMostrar.innerHTML =''; 
+  // cohortsMostrar.innerHTML =''; 
   pintar(arrResult);
 
 };
@@ -79,6 +90,7 @@ const addUsers = (usersName, dataUsers) => {
 }
 // FUNCION DE PINTADO:
 const pintar=(datos)=>{
+  cohortsMostrar.innerHTML='';
   for(const students of datos){
     cohortsMostrar.innerHTML+=
     ` <div class="cohort">

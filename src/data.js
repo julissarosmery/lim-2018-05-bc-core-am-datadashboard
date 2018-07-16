@@ -120,25 +120,25 @@ window.computeUsersStats = (users, progress, courses) => {
   // window.sortUsers = (users, orderBy, orderDirection) => {
   
   // }
-  window.filterUsers = (users, search) => {debugger
-    console.log(users);
+  window.filterUsers = (users, search) => {
     
         const userFilter = users.filter(user => {
-          return user.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+          // if(user.stats.name!=undefined){
+          //   let nombres = user.stats.name;
+          return user.name.toLowerCase().indexOf(search.toLowerCase())> -1;
+          // }
         });
         return userFilter;
       }
   
-  window.processCohortData = (options) => {
-    const courses = Object.keys(options.cohort.coursesIndex);//el objet.keys devuelve un array:
-    let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
-    //students = sortUsers(users,orderBy,orderDirection);
-     options.cohortData.search ? students = filterUsers(options.cohortData.users,options.search):students;
-    //console.log(filterUsers);
-    //console.log(search);
-    
-    // console.log(options.cohortData.users,options.cohortData.progress,courses);
-  return students;
-    
-  }
+      window.processCohortData = (options) => {
+        const courses = Object.keys(options.cohort.coursesIndex);//el objet.keys devuelve un array:
+        let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
+        //students = sortUsers(users,orderBy,orderDirection);
+         options.cohortData.search ? students = filterUsers(options.cohortData.users,options.search):students;
+              
+        // console.log(options.cohortData.users,options.cohortData.progress,courses);
+      return students;
+        
+      }
   
