@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <title>laboratoria dashabart</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
 
+<head>
+  <meta charset="utf-8">
+  <title>Data Dashboard copia</title>
+  <link rel="stylesheet" href="style.css" />
+  <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300" >
 
 </head>
+
 <body>
-  <header>
-    <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300" >
-  </header>
-  <hr>
+  <label>Buscar</label>
+  <input type="text" id="search" >
+
+  <br>
   <div id="header">
     <ul class="nav">
-      <li> <a href="" id="formulario" >SEDES</a>
+      <li id="formulario">SEDES:
         <ul id="sedes">
-        <li><a href="" id="lim" >lima</a></li>
-        <li><a href="" id="cdmx">ciudad de mexico</a></li>
-        <li><a href="" id="aqp">arequipa</a></li>
-        <li><a href="" id="scl" >santiago de chile</a></li>
-        <li><a href="" id="spl" >sao paulo</a></li>
-      </ul>
+          <li id="lim">Lima</li>
+          <li id="cdmx">Ciudad De Mexico</li>
+          <li id="aqp">Arequipa</li>
+          <li id="scl">Santiago De Chile</li>
+          <li id="spl">Sao Paulo</li>
+          <li id="gdl">Guadalajara</li>
+
+        </ul>
       </li>
     </ul>
   </div>
-  <div  id="cohorts"class="ventanitas" >
-    <div id="mostrarCohorts"   class="cuadros"></div>
+
+  <div id="cohorts" class="ventanitas">
+    <div id="mostrarCohorts" class="cuadros"></div>
   </div>
 
-  <div id="users" > 
+  <div id="users" >
     <div id="mostrarUsers" class="cuadroUsers"></div>
   </div>
 
   <div>
-    <div id="mostrarProgress" class="cuadrosprogress" ></div>
+    <div id="mostrarProgress" class="cuadrosProgress"></div>
   </div>
-  <script src="data.js"></script>
+
+
   <script src="main.js"></script>
-  
+  <script src="data.js"></script>
+
 </body>
-</html>
+
+</html> 
+
+
+
+
+
+
 
