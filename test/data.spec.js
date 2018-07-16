@@ -1,6 +1,6 @@
 describe('data', () => {
 
-  it( computeUsersStats = (users, progress, courses) => {
+  it('debería exponer función computeUsersStats en objeto global', () => {
     assert.isFunction(computeUsersStats);
   });
 
@@ -12,7 +12,7 @@ describe('data', () => {
     assert.isFunction(filterUsers);
   });
 
-  it( processCohortData = (data) => {
+  it('debería exponer función processCohortData en objeto global', () => {
     assert.isFunction(processCohortData);
   });
 
