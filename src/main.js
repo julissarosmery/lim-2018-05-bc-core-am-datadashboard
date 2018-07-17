@@ -8,6 +8,7 @@ const urlProgress = "../data/cohorts/lim-2018-03-pre-core-pw/progress.json";
 const cohortsMostrar = document.getElementById('mostrarCohorts');
 
 
+
 const options = {
   cohort: null,
   cohortData: {
@@ -18,8 +19,6 @@ const options = {
   orderDirection: 'ASC',
   search: ''
 };
-
-
 
 espacioBuscar.addEventListener('input',(event)=>{
   options.search = event.target.value;  
@@ -71,9 +70,9 @@ const addCohorts = (sedesHtml, datacohorts) => {
 // 3 . FUNCION PARA LLAMAR A PROGRESS:
 const addProgress = (usersName, dataProgress) => {
   options.cohortData.progress = dataProgress;
-  const arrResult= processCohortData(options);
+  const arrResult = processCohortData(options);
   //console.log(arrResult);
-  cohortsMostrar.innerHTML='';
+  cohortsMostrar.innerHTML = '';
   // cohortsMostrar.innerHTML =''; 
   pintar(arrResult);
 
@@ -85,20 +84,20 @@ const addUsers = (usersName, dataUsers) => {
   obtJson(usersName, urlProgress, addProgress);
 }
 // FUNCION DE PINTADO:
-const pintar=(datos)=>{
+const pintar = (datos) => {
   //for(let i= 0;i<datos.length;i++){
-    // console.log(datos);
-   for(const students of datos){
-    cohortsMostrar.innerHTML+=
-    ` <div class="cohort">
+  // console.log(datos);
+  for (const students of datos) {
+    cohortsMostrar.innerHTML +=
+      ` <div class="cohort" id='order'>
         <p>${students.name}</p>
         <p>excercises:${students.stats.exercises.percent}</p>
         <p>reads:${students.stats.reads.percent}</p>
         <p>quizzes:${students.stats.quizzes.percent}</p>
         <p>percent:${students.stats.percent}</p>
         </div>`
-      }
-    }
+  }
+}
 
 
 //EVENTO # 1:
