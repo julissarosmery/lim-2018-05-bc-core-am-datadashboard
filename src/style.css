@@ -1,37 +1,101 @@
-body{
-    background: #E5B933;
-    position: absolute; 
+* {
+    padding: 0px;
+    margin: 0px;
+}
+#header{
+/* margin: 20px 80px; */
+width: 100px 100px;
+font-family: Arial, Helvetica, sans-serif;
+}
+.nav ul, li  ul{
+    list-style:none;
+
 }
 
-.prom-2014-button {
-    background: #F2994A;
-    padding: 15%;
+ul ,li{
+    background-color:rgb(233, 185, 27);
+    color: #fff;
+    text-decoration:none;
+    padding: 20px 20px;
+    display: block;
+}  
+  .nav li :hover{
+    background-color:#3b3207;
+}
+/* .nav li ul{
+    float:left;
+} */
+
+.nav ul{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    
+
+      /*borde arriba*/
+      border-top: 1px ridge rgba(30, 32, 32, 0.897);
+      /*borde derecho*/
+      border-right: 1px ridge rgba(19, 20, 20, 0.904);
+      /*borde de abajo*/
+      border-bottom: 1px ridge #171718;
+      /*borde izquierdo*/
+      border-left: 1px ridge #131414;
+      /*para centrar contenido dentro del form*/
 }
 
-.prom-2015-button {
-    background: #F2994A;
-    padding: 15%;
-}
-
-.prom-2016-button {
-    background: #F2994A;
-    padding: 15%;
-}
-
-.prom-2017-button {
-    background: #F2994A;
-    padding: 15%;
-}
-
-#prom-2018-button {
-    background: #F2994A;
-    padding: 15%;
-}
-
-#block-2 {
+.nav li:hover> ul{
     display: block;
 }
-
-#block-3 {
-    display: none;
+/* .nav li ul li{
+    /* position: relative; */
+/* } */ 
+.nav li ul li ul{
+    right: 200px;
+    top: 100px;
 }
+ /* .chau{ */
+    /* achica desde los costados */
+    /* margin: 80px 80px ; */
+    /* ancho vertical */
+    /* padding: 50px; */
+    /* ancho horizontal */
+    /* width: 80px; */
+    /* min-width: 0px; */
+
+/* }  */
+.chau{
+ /* font: bold 15px tahoma; */
+    /* width: 150px; */
+    /* margin: 20px auto;  */
+
+    background-color:#56F89A;
+    border: 2px solid #000000;
+    /* margenes con respecto a los costados */
+     /* padding: 50px; */
+    text-align: center; 
+    /* margin: 20px auto;  */
+    /* ancho */
+     /* width: 500px ; */
+    /* tamaño de la letra */
+    /* font: bold 15px tahoma; */
+     display: block;  
+     float: initial;
+}
+.cohort{
+    /* font: bold 15px tahoma; */
+       /* width: 150px; */
+       /* margin: 20px auto;  */
+   
+       background-color:#56F89A;
+       border: 2px solid #792424;
+       /* margenes con respecto a los costados */
+        /* padding: 50px; */
+       text-align: center; 
+       /* margin: 20px auto;  */
+       /* ancho */
+        /* width: 500px ; */
+       /* tamaño de la letra */
+       /* font: bold 15px tahoma; */
+        display: block;  
+        float: initial;
+   }

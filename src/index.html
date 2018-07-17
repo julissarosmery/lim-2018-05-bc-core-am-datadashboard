@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Dashboard Lab</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-   <section id="block-2"> 
-    <header>SEDE LIMA</header>
-    <div>
-      <form action="search">
-        <input id="search-box" type="search" placeholder="Insert student's name">
-        <button id="search-button">Search</button>
-      </form>
-    </div>
-    <div>
-      <button class="prom-2014-button">PROM 2014</button>
-    </div>
-    <div>
-      <button class="prom-2015-button">PROM 2015</button>
-    </div>
-    <div>
-      <button class="prom-2016-button">PROM 2016</button>
-    </div>
-    <div>
-      <button class="prom-2017-button">PROM 2017</button>
-    </div>
-    <div>
-      <button id="prom-2018-button">PROM 2018</button>
-    </div>
-   </section> 
-   <section id="block-3">
-     <h1>PROMEDIOS GENERALES DEL CICLO</h1>
-   </section>
-   <script src="main.js"></script>
-   <script src="data.js"></script>
-  </body>
-</html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Dashboard copia</title>
+  <link rel="stylesheet" href="style.css" />
+  <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300" >
+
+</head>
+
+<body>
+   
+  <label>Buscar</label>
+  <input type="text" id="search" >
+ 
+
+
+  <br>
+  <div id="header">
+    <ul class="nav">
+      <li id="formulario">SEDES:
+        <ul id="sedes">
+          <li id="lim">Lima</li>
+          <li id="cdmx">Ciudad De Mexico</li>
+          <li id="aqp">Arequipa</li>
+          <li id="scl">Santiago De Chile</li>
+          <li id="spl">Sao Paulo</li>
+          <li id="gdl">Guadalajara</li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="cohorts" class="ventanitas">
+    <div id="mostrarCohorts" class="cuadros"></div>
+  </div>
+  
+
+ 
+    <!-- 
+
+  <div>
+    <div id="mostrarProgress" class="cuadrosProgress"></div>
+  </div> -->
+
+
+  <script src="main.js"></script>
+  <script src="data.js"></script>
+
+</body>
+
+</html> 
+
+
+
+
+
+
+
