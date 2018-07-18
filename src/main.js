@@ -31,9 +31,7 @@ ordenar.addEventListener('click',()=>{
   options.orderDirection=selectorOderDirection.value;
   console.log(options.orderDirection);
   const userOrder = sortUsers(processCohortData(options),options.orderBy,options.orderDirection);
-  // const userOrder = processCohortData(options);
-  
-// const pintaFiltro = filterUsers(processCohortData(options),options.search);
+  // const userOrder = processCohortData(options);  
   console.log(userOrder);
   cohortsMostrar.innerHTML='';
 
@@ -47,6 +45,7 @@ espacioBuscar.addEventListener('input',(event)=>{
   options.search = event.target.value;  
   console.log(options.search);
   const pintaFiltro = filterUsers(processCohortData(options),options.search);
+  // const pintaFiltro = processCohortData(options);
   console.log(pintaFiltro);
   cohortsMostrar.innerHTML='';
   pintar(pintaFiltro);
