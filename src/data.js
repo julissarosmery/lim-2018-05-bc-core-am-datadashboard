@@ -175,15 +175,15 @@ window.sortUsers = (users, orderBy, orderDirection) => {
   //   const order = users.sort = (a, b)=> { return b.stats.quizzes.scoreAvg - a.stats.quizzes.scoreAvg };
   //   return order;
   // } 
-  //ordenar por lecturas:
-  // else if (orderBy === 'reads' & orderDirection === 'asc') {
-  //   const order = users.sort ((a, b)=> { return a.stats.reads.completed - b.stats.reads.completed });
-  //   return order;
-  // } 
-  // else {
-  //   const order = users.sort ((a, b)=> { return b.stats.reads.completed - a.stats.reads.completed });
-  //   return order;
-  // }
+  // ordenar por lecturas:
+  else if (orderBy === 'reads' & orderDirection === 'asc') {
+    const order = users.sort ((a, b)=> { return a.stats.reads.completed - b.stats.reads.completed });
+    return order;
+  } 
+  else if(orderBy === 'reads' & orderDirection === 'desc'){
+    const order = users.sort ((a, b)=> { return b.stats.reads.completed - a.stats.reads.completed });
+    return order;
+  }
 }
 window.filterUsers = (users, search) => {
   const userFilter = users.filter(user => {

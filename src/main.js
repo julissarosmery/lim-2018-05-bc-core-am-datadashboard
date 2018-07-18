@@ -34,6 +34,7 @@ ordenar.addEventListener('click',()=>{
 // const pintaFiltro = filterUsers(processCohortData(options),options.search);
   console.log(userOrder);
   cohortsMostrar.innerHTML='';
+
   pintar(userOrder);
 })
 
@@ -107,10 +108,11 @@ const pintar = (datos) => {
     cohortsMostrar.innerHTML +=
       ` <div class="cohort" id='order'>
         <p>${students.name}</p>
-        <p>excercises:${students.stats.exercises.percent}</p>
-        <p>reads:${students.stats.reads.percent}</p>
-        <p>quizzes:${students.stats.quizzes.percent}</p>
         <p>percent:${students.stats.percent}</p>
+        <p>excercises:${students.stats.exercises.percent}</p>
+        <p>quizzes:${students.stats.quizzes.percent}</p>
+        <p>reads:${students.stats.reads.percent}</p>
+        
         </div>`
   }
 }
@@ -126,9 +128,9 @@ sedes.addEventListener('click', (event) => {
 cohortsMostrar.addEventListener('click', (event) => {
   const cohortSeleccionado = options.cohort.filter(ele => {
     if (ele.id === "lim-2018-03-pre-core-pw") {
-      return (ele.id);
+      return (ele.id)
       options.cohort = ele.id;
-    }
+    };
   })
   options.cohort = cohortSeleccionado[0];
   // console.log(options);
