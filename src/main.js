@@ -1,5 +1,10 @@
 const sedes = document.querySelector('#sedes');
 const espacioBuscar = document.getElementById('search');
+//elemntos para ordenar de forma ascen y desc:
+const selectorOderDirection = document.getElementById('orderDirection');
+const selectOrderBy = document.getElementById('orderBy');
+const ordenar = document.getElementById('ordenar');
+
 
 const urlCohorts = "../data/cohorts.json";
 const urlUser = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
@@ -15,10 +20,25 @@ const options = {
     users: null,
     progress: null,
   },
-  orderBy: 'name',
+  orderBy: '',
   orderDirection: 'ASC',
   search: ''
 };
+
+ordenar.addEventListener('click',()=>{
+  options.orderBy=selectOrderBy.value;
+  console.log(options.orderBy);
+  options.orderDirection=selectorOderDirection.value;
+  console.log(options.orderDirection);
+  const userOrder = sortUsers(processCohortData(options),options.orderBy,options.orderDirection);
+// const pintaFiltro = filterUsers(processCohortData(options),options.search);
+  console.log(userOrder);
+  cohortsMostrar.innerHTML='';
+  pintar(userOrder);
+})
+
+
+
 
 espacioBuscar.addEventListener('input',(event)=>{
   options.search = event.target.value;  
@@ -27,10 +47,6 @@ espacioBuscar.addEventListener('input',(event)=>{
   console.log(pintaFiltro);
   cohortsMostrar.innerHTML='';
   pintar(pintaFiltro);
-/* pintaFiltro.forEach(element => {
-  console.log (element);
-  pintar(pintaFiltro);
-}); */
 })
 
 
