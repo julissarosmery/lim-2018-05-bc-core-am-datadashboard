@@ -166,15 +166,6 @@ window.sortUsers = (users, orderBy, orderDirection) => {
     const order = users.sort ((a, b) =>{ return b.stats.quizzes.completed - a.stats.quizzes.completed });
     return order;
   }
-
-  // else if (orderBy === 'quizzesAvg' & orderDirection === 'asc') {
-  //   const order = users.sort = (a, b) =>{ return a.stats.quizzes.scoreAvg - b.stats.quizzes.scoreAvg };
-  //   return order;
-  // }
-  //  else if (orderBy === 'quizzesAvg' & orderDirection === 'desc') {
-  //   const order = users.sort = (a, b)=> { return b.stats.quizzes.scoreAvg - a.stats.quizzes.scoreAvg };
-  //   return order;
-  // } 
   // ordenar por lecturas:
   else if (orderBy === 'reads' & orderDirection === 'asc') {
     const order = users.sort ((a, b)=> { return a.stats.reads.completed - b.stats.reads.completed });
@@ -204,6 +195,5 @@ window.processCohortData = (options) => {
 
   // console.log(options.cohortData.users,options.cohortData.progress,courses);
   return students;
-
 }
 

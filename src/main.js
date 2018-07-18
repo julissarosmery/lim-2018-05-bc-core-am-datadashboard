@@ -24,7 +24,7 @@ const options = {
   orderDirection: 'ASC',
   search: ''
 };
-
+//EVENTO PARA ORDENAR ASCENDENTE Y DESCENDENTE:
 ordenar.addEventListener('click',()=>{
   options.orderBy=selectOrderBy.value;
   console.log(options.orderBy);
@@ -40,7 +40,7 @@ ordenar.addEventListener('click',()=>{
 
 
 
-
+// EVENTO PARA BUSCAR POR NOMBRES:
 espacioBuscar.addEventListener('input',(event)=>{
   options.search = event.target.value;  
   console.log(options.search);
@@ -127,7 +127,7 @@ sedes.addEventListener('click', (event) => {
 // EVENTO # 2:
 cohortsMostrar.addEventListener('click', (event) => {
   const cohortSeleccionado = options.cohort.filter(ele => {
-    if (ele.id === "lim-2018-03-pre-core-pw") {
+    if (ele.id === "lim-2018-03-pre-core-pw"){
       return (ele.id)
       options.cohort = ele.id;
     };

@@ -12,11 +12,24 @@
 </head>
 
 <body>
-   
+        <button id="ordenar" class="">Ordenar</button>
+
+        <select id="orderBy" class="">
+            <option value="name">Nombre</option>
+            <option value="percent">Progreso</option>
+            <option value="exercises">Ejercicios</option>
+            <option value="quizzes">Quizzes</option>
+            <!-- <option value="quizzesAvg">PromedioScore</option> -->
+            <option value="reads">Lecturas</option>
+          </select>
+
+      <select id="orderDirection" class="">
+          <option value="asc">Ascendente</option>
+          <option value="desc">Descendente</option>
+        </select>
+
   <label>Buscar</label>
   <input type="text" id="search" >
- 
-
 
   <br>
   <div id="header">
@@ -35,26 +48,12 @@
     </ul>
   </div>
 
-  <select id="orderBy" class="">
-      <option value="name">Nombre</option>
-      <option value="percent">Progreso</option>
-      <option value="exercises">Ejercicios</option>
-      <option value="quizzes">Quizzes</option>
-      <!-- <option value="quizzesAvg">PromedioScore</option> -->
-      <option value="reads">Lecturas</option>
-    </select>
-
-    <select id="orderDirection" class="">
-        <option value="asc">Ascendente</option>
-        <option value="desc">Descendente</option>
-      </select>
-      <br>
-      <button id="ordenar" class="">Ordenar</button>
-
-
+  
   <div id="cohorts" class="ventanitas">
     <div id="mostrarCohorts" class="cuadros"></div>
   </div>
+
+
   
 
  
