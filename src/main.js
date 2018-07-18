@@ -31,6 +31,8 @@ ordenar.addEventListener('click',()=>{
   options.orderDirection=selectorOderDirection.value;
   console.log(options.orderDirection);
   const userOrder = sortUsers(processCohortData(options),options.orderBy,options.orderDirection);
+  // const userOrder = processCohortData(options);
+  
 // const pintaFiltro = filterUsers(processCohortData(options),options.search);
   console.log(userOrder);
   cohortsMostrar.innerHTML='';

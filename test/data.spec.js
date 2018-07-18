@@ -75,31 +75,94 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
+    const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
+    const courses = Object.keys(cohort.coursesIndex);
+    const { users, progress } = fixtures;
+    const processed = computeUsersStats(users, progress, courses);
 
-    it('debería retornar arreglo de usuarios ordenado por nombre ASC');
-    it('debería retornar arreglo de usuarios ordenado por nombre DESC');
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC');
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC');
+    
+
+    it('debería retornar arreglo de usuarios ordenado por nombre ASC', () => {
+      const ordensort = sortUsers(processed, "name", 'ASC')
+      assert.deepEqual(ordensort[0].name,'adriana vizcarra paitán');
+    })
+
+    it('debería retornar arreglo de usuarios ordenado por nombre DESC', ()=>{
+      const ordensort = sortUsers(processed, 'name' , 'DESC')
+      assert.deepEqual(ordensort[0].name,'zurisadai rosas aramburú')
+    });
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC', () => {
+      const ordensort = sortUsers(processed, "percent", 'ASC')
+      assert.deepEqual(ordensort[0].stats.percent, 0 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC', () => {
+      const ordensort = sortUsers(processed, "percent", 'DESC')
+      assert.deepEqual(ordensort[0].stats.percent, 100 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC', () => {
+      const ordensort = sortUsers(processed, "exercises", 'ASC')
+      assert.deepEqual(ordensort[0].stats.exercises.completed, 0 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC', () => {
+      const ordensort = sortUsers(processed, "exercises", 'DESC')
+      assert.deepEqual(ordensort[0].stats.exercises.completed, 2 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC', () => {
+      const ordensort = sortUsers(processed, "quizz", 'ASC')
+      assert.deepEqual(ordensort[0].stats.quizzes.completed, 0 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC', () => {
+      const ordensort = sortUsers(processed, "quizz", 'DESC')
+      assert.deepEqual(ordensort[0].stats.quizzes.completed, 100 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC', () => {
+      const ordensort = sortUsers(processed, "quizzAvg", 'ASC')
+      assert.deepEqual(ordensort[0].stats.quizzes.scoreAvg,  0 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC', () => {
+      const ordensort = sortUsers(processed, "quizzAvg", 'DESC')
+      assert.deepEqual(ordensort[0].stats.quizzes.scoreAvg, 100 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC', () => {
+      const ordensort = sortUsers(processed, "reads", 'ASC')
+      assert.deepEqual(ordensort[0].stats.reads.completed, 0 )
+    });
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC' , () => {
+      const ordensort = sortUsers(processed, "reads", 'DESC')
+      assert.deepEqual(ordensort[0].stats.reads.completed, 100 )
+    });
 
   });
 
   describe('filterUsers(users, filterBy)', () => {
+    const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
+    const courses = Object.keys(cohort.coursesIndex);
+    const { users, progress } = fixtures;
+    const processed = computeUsersStats(users, progress, courses);
 
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)', ()=>{
+
+    assert.equal(window.filterUsers(processed, 'angie').length, 2)
+    });
 
   });
 
-  describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
+  describe('processCohortData({ cohortData, orderBy, orderDirection, search })', () => {
 
-    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter');
+    let options = {
+
+      cohort: fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw'),
+      cohortData: fixtures,
+    
+      orderBy: 'name',
+      orderDirection: 'ASC',
+      search: 'angie'
+    }
+
+    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter', ()=>{
+      
+      assert.deepEqual(window.processCohortData(options).length, 2);
+    });
 
   });
 
