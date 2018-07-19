@@ -4,32 +4,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>Data Dashboard copia</title>
   <link rel="stylesheet" href="style.css" />
-  <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300" >
+  <img src="https://cdn-images-1.medium.com/max/945/1*3ebT5azEfTrKxANOE3BwyA.jpeg" alt="" width="300">
 
 </head>
 
 <body>
-        <button id="ordenar" class="">Ordenar</button>
 
-        <select id="orderBy" class="">
-            <option value="name">Nombre</option>
-            <option value="percent">Progreso</option>
-            <option value="exercises">Ejercicios</option>
-            <option value="quizzes">Quizzes</option>
-            <!-- <option value="quizzesAvg">PromedioScore</option> -->
-            <option value="reads">Lecturas</option>
-          </select>
+  <select id="orderBy" class="selectores" >
+    <option value="name">Nombre</option>
+    <option value="percent">Progreso</option>
+    <option value="exercises">Ejercicios</option>
+    <option value="quizzes">Quizzes</option>
+    <!-- <option value="quizzesAvg">PromedioScore</option> -->
+    <option value="reads">Lecturas</option>
+  </select>
 
-      <select id="orderDirection" class="">
-          <option value="asc">Ascendente</option>
-          <option value="desc">Descendente</option>
-        </select>
+  <select id="orderDirection" class="selec">
+    <option value="asc">Ascendente</option>
+    <option value="desc">Descendente</option>
+  </select>
+  <button id="ordenar" class="boton">Ordenar</button>
 
-  <label>Buscar</label>
-  <input type="text" id="search" >
+  <input type="text" id="search" placeholder="🎓 buscar estudiante aqui">
+
 
   <br>
   <div id="header">
@@ -48,16 +48,16 @@
     </ul>
   </div>
 
-  
+
   <div id="cohorts" class="ventanitas">
     <div id="mostrarCohorts" class="cuadros"></div>
   </div>
 
 
-  
 
- 
-    <!-- 
+
+
+  <!-- 
 
   <div>
     <div id="mostrarProgress" class="cuadrosProgress"></div>
@@ -70,11 +70,4 @@
 
 </body>
 
-</html> 
-
-
-
-
-
-
-
+</html>
