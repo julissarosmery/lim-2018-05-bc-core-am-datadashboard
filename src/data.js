@@ -187,8 +187,13 @@ window.filterUsers = (users, search) => {
 window.processCohortData = (options) => {
   const courses = Object.keys(options.cohort.coursesIndex);//el objet.keys devuelve un array:
   let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
-  // students = sortUsers(options.cohortData.users,options.orderBy,options.orderDirection);
-  // options.cohortData.indefinido ? students = filterUsers(options.cohortData.users, options.search) : students;
+  options.search ? students = filterUsers(students, options.search) : students;
+
+  students = sortUsers(students,options.orderBy,options.orderDirection);
+ 
+  
+  console.log(students)
+  
   //console.log(filterUsers);
   // console.log(options.search);
 

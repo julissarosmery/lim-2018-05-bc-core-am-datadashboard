@@ -20,8 +20,8 @@ const options = {
     users: null,
     progress: null,
   },
-  orderBy: '',
-  orderDirection: 'ASC',
+  orderBy: 'name',
+  orderDirection: 'asc',
   search: ''
 };
 //EVENTO PARA ORDENAR ASCENDENTE Y DESCENDENTE:
@@ -29,9 +29,11 @@ ordenar.addEventListener('click',()=>{
   options.orderBy=selectOrderBy.value;
   console.log(options.orderBy);
   options.orderDirection=selectorOderDirection.value;
+
   console.log(options.orderDirection);
-  const userOrder = sortUsers(processCohortData(options),options.orderBy,options.orderDirection);
-  // const userOrder = processCohortData(options);  
+  const userOrder = processCohortData(options);
+  // const userOrder = processCohortData(options);
+  // let userOrder=processCohortData(options);  
   console.log(userOrder);
   cohortsMostrar.innerHTML='';
 
@@ -43,13 +45,26 @@ ordenar.addEventListener('click',()=>{
 // EVENTO PARA BUSCAR POR NOMBRES:
 espacioBuscar.addEventListener('input',(event)=>{
   options.search = event.target.value;  
+  // options.orderBy=selectOrderBy.value;
+  // options.orderDirection=selectorOderDirection.value;
+  
+  
   console.log(options.search);
-  const pintaFiltro = filterUsers(processCohortData(options),options.search);
+  const pintaFiltro = processCohortData(options);
   // const pintaFiltro = processCohortData(options);
+  // let pintaFiltro=processCohortData(pintaFiltr);
   console.log(pintaFiltro);
   cohortsMostrar.innerHTML='';
-  pintar(pintaFiltro);
-})
+  for (const ele of pintaFiltro) {
+    cohortsMostrar.innerHTML += '';
+    let listBusca = document.createElement('div');
+    listBusca.setAttribute('class', 'cohort');
+    listBusca.textContent = ele.name;
+    cohortsMostrar.appendChild(listBusca);
+//   pintar(pintaFiltro);
+// })
+  }
+});
 
 
 

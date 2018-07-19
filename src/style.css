@@ -6,7 +6,7 @@
 /* margin: 20px 80px; */
 width: 100px 100px;
 /* font-family: Arial, Helvetica, sans-serif; */
-font-family:cursive;
+font-family:Basic Latinc;
 
 }
 .nav ul, li  ul{
@@ -90,7 +90,7 @@ ul ,li{
     
      display: block;  
      float: initial;
-font-family:cursive;
+font-family:Basic Latin;
      
 }
 
@@ -100,15 +100,15 @@ font-family:cursive;
        /* margin: 20px auto;  */
    
        background-color:#56F89A;
-       border: 2px solid #000000 ;
+       border: 1px solid #000000 ;
        /* margenes con respecto a los costados */
         /* padding: 50px; */
        text-align: center; 
-       /* margin: 20px auto;  */
+       /* margin:15px auto;  */
        /* ancho */
         /* width: 500px ; */
        /* tamaño de la letra */
-       font: 18px tahoma;
+       font: 13px tahoma;
         display: block;  
         float: initial;
 font-family:cursive;
@@ -116,10 +116,29 @@ font-family:cursive;
    }
 
  .boton {
- background: #FFE521 ;
+    background: #FFE521 ;
+    color: #171718;
+    display: inline-block;
+    /* font-size: 1.25em; */
+    margin: 20px;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #56F89A;
+
+    font-family: 'helvetica';
+    font-size: 100%;
+    color: aqua;
+    size:'3';
+    border-radius: ;
+ /* background: #FFE521 ;
  color: #292969;
  display: inline-block;
- /* font-size: 1.25em; */
+font-family:Arial, Helvetica, sans-serif;
+ 
+
+
+
+ font-size: 15px; 
  /* margin: 20px; */
  /* width: 70px; */
  /* text-decoration: none; */
