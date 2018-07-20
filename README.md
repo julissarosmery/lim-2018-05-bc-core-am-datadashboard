@@ -72,8 +72,13 @@ https://www.figma.com/proto/0vVFpPYyTxVeyenGRzpIwSIi/pag-web?scaling=contain&nod
 
 # producto terminado:
 
+![a](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37582411_1719226011464210_7163442538429284352_n.png?_nc_cat=0&oh=151d5b51d4cbcd4896683f79ac39a50b&oe=5BDC315F)
+
 ![terminado](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37570528_1719217478131730_8464684111468953600_n.png?_nc_cat=0&oh=c5ae9967898e65feb3f2510582656fda&oe=5BE58F7F)
 
 
 
 ![terminado 2](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37511926_1719218254798319_7291765105987944448_n.png?_nc_cat=0&oh=dee8d8eea163dc9cbdaa29b86ad1a3a9&oe=5BE23AD0)
+
+
+
