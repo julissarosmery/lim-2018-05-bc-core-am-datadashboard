@@ -82,13 +82,9 @@ window.computeUsersStats = (users, progress, courses) => {
     };
     if (practi === 'quiz') {
       response.scoreAvg = totalCompletadoQuizzes != 0 ? Math.round(puntajeTotal = totalCompletadoQuizzes) : 0;
-      // console.log(completado);
-    }
-    return response;
+ 
+    }return response;
   }
-
-
-
   //filtrar usuarias para que sean del rol de estudiantes:
   let students = datosUsuarias.filter(estudiantesEspeficadas => estudiantesEspeficadas.role === "student");
   // console.log(students);
@@ -180,25 +176,12 @@ window.filterUsers = (users, search) => {
     return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
   });
   return userFilter;
-  // console.log(users);
-
 }
-
 window.processCohortData = (options) => {
   const courses = Object.keys(options.cohort.coursesIndex);//el objet.keys devuelve un array:
   let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
   options.search ? students = filterUsers(students, options.search) : students;
-
   students = sortUsers(students,options.orderBy,options.orderDirection);
- 
-  
-  console.log(students)
-  
-  //console.log(filterUsers);
-  // console.log(options.search);
-
-  // console.log(options.cohortData.users,options.cohortData.progress,courses);
   return students;
-
 }
 
