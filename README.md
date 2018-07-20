@@ -1,21 +1,27 @@
 # proyecto datadashboard
 
-# Definición del producto
+## Definición del producto
 
 - Principales usuarios:
+
 para que los (TM)training managers puedan ver la data del progreso en el (LMS)learning management system crearemos un datadashboard.
+
 - la logica esta implementada en ES6.
 
 - Objetivos de los usuarios en relación al producto:
+
 Obtener los datos de las alumnas de una manera ágil y sencilla para poder realizar el seguimiento correspondiente a su avance academico.
 
 - Datos mas relevantes de la interfaz:
+
 En la interfaz lo mas relevante e importante para las Training Managers(TMs) es ver el promedio del avance de los ejercicios de todas las alumnas de Laboratoria
 
 - Frecuencia de análisis de datos:
+
 Los datos son analizados al finalizar cada sprint y al finalizar cada projet.
 
 - Solución de problemas:
+
 Si, ya que en la actualidad manejan un archivo de Excel para ver el progreso de las alumnas pero no es practico de utilizar y es poco atractivo visualmente.
 
 - Proceso de diseño:
@@ -64,4 +70,10 @@ se tomo notas de los pedidos que hizo el usuario de manera global
 
 https://www.figma.com/proto/0vVFpPYyTxVeyenGRzpIwSIi/pag-web?scaling=contain&node-id=14%3A9
 
+# producto terminado:
 
+![terminado](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37570528_1719217478131730_8464684111468953600_n.png?_nc_cat=0&oh=c5ae9967898e65feb3f2510582656fda&oe=5BE58F7F)
+
+
+
+![terminado 2](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37511926_1719218254798319_7291765105987944448_n.png?_nc_cat=0&oh=dee8d8eea163dc9cbdaa29b86ad1a3a9&oe=5BE23AD0)
