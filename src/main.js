@@ -1,5 +1,10 @@
 const sedes = document.querySelector('#sedes');
 const espacioBuscar = document.getElementById('search');
+//elemntos para ordenar de forma ascen y desc:
+const selectorOderDirection = document.getElementById('orderDirection');
+const selectOrderBy = document.getElementById('orderBy');
+const ordenar = document.getElementById('ordenar');
+
 
 const urlCohorts = "../data/cohorts.json";
 const urlUser = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
@@ -16,22 +21,50 @@ const options = {
     progress: null,
   },
   orderBy: 'name',
-  orderDirection: 'ASC',
+  orderDirection: 'asc',
   search: ''
 };
+//EVENTO PARA ORDENAR ASCENDENTE Y DESCENDENTE:
+ordenar.addEventListener('click',()=>{
+  options.orderBy=selectOrderBy.value;
+  console.log(options.orderBy);
+  options.orderDirection=selectorOderDirection.value;
 
+  console.log(options.orderDirection);
+  const userOrder = processCohortData(options);
+  // const userOrder = processCohortData(options);
+  // let userOrder=processCohortData(options);  
+  console.log(userOrder);
+  cohortsMostrar.innerHTML='';
+
+  pintar(userOrder);
+})
+
+
+
+// EVENTO PARA BUSCAR POR NOMBRES:
 espacioBuscar.addEventListener('input',(event)=>{
   options.search = event.target.value;  
+  // options.orderBy=selectOrderBy.value;
+  // options.orderDirection=selectorOderDirection.value;
+  
+  
   console.log(options.search);
-  const pintaFiltro = filterUsers(processCohortData(options),options.search);
+  const pintaFiltro = processCohortData(options);
+  // const pintaFiltro = processCohortData(options);
+  // let pintaFiltro=processCohortData(pintaFiltr);
   console.log(pintaFiltro);
   cohortsMostrar.innerHTML='';
-  pintar(pintaFiltro);
-/* pintaFiltro.forEach(element => {
-  console.log (element);
-  pintar(pintaFiltro);
-}); */
-})
+  for (const ele of pintaFiltro) {
+    cohortsMostrar.innerHTML += '';
+    let listBusca = document.createElement('div');
+    listBusca.setAttribute('class', 'cohort');
+    listBusca.textContent = ele.name;
+    cohortsMostrar.appendChild(listBusca);
+//   pintar(pintaFiltro);
+// })
+  }
+});
 
 
 
@@ -91,10 +124,11 @@ const pintar = (datos) => {
     cohortsMostrar.innerHTML +=
       ` <div class="cohort" id='order'>
         <p>${students.name}</p>
-        <p>excercises:${students.stats.exercises.percent}</p>
-        <p>reads:${students.stats.reads.percent}</p>
-        <p>quizzes:${students.stats.quizzes.percent}</p>
         <p>percent:${students.stats.percent}</p>
+        <p>excercises:${students.stats.exercises.percent}</p>
+        <p>quizzes:${students.stats.quizzes.percent}</p>
+        <p>reads:${students.stats.reads.percent}</p>
+        
         </div>`
   }
 }
@@ -109,10 +143,10 @@ sedes.addEventListener('click', (event) => {
 // EVENTO # 2:
 cohortsMostrar.addEventListener('click', (event) => {
   const cohortSeleccionado = options.cohort.filter(ele => {
-    if (ele.id === "lim-2018-03-pre-core-pw") {
-      return (ele.id);
+    if (ele.id === "lim-2018-03-pre-core-pw"){
+      return (ele.id)
       options.cohort = ele.id;
-    }
+    };
   })
   options.cohort = cohortSeleccionado[0];
   // console.log(options);
