@@ -1,6 +1,34 @@
 # proyecto datadashboard
+
+# Definición del producto
+
+- Principales usuarios:
 para que los (TM)training managers puedan ver la data del progreso en el (LMS)learning management system crearemos un datadashboard.
 - la logica esta implementada en ES6.
+
+- Objetivos de los usuarios en relación al producto:
+Obtener los datos de las alumnas de una manera ágil y sencilla para poder realizar el seguimiento correspondiente a su avance academico.
+
+- Datos mas relevantes de la interfaz:
+En la interfaz lo mas relevante e importante para las Training Managers(TMs) es ver el promedio del avance de los ejercicios de todas las alumnas de Laboratoria
+
+- Frecuencia de análisis de datos:
+Los datos son analizados al finalizar cada sprint y al finalizar cada projet.
+
+- Solución de problemas:
+Si, ya que en la actualidad manejan un archivo de Excel para ver el progreso de las alumnas pero no es practico de utilizar y es poco atractivo visualmente.
+
+- Proceso de diseño:
+
+lo primero que hicimos a nivel squat fue crear el tablero de post (backlog);en el cual creamos tarea especificas parara el primer sprint;como leer el readme ,crear el prototipo de baja fidelidad y el de alta.
+
+luego tomamos notas sobre la entrevista global que hiso nuestra usuaria directe en este caso (tm);para despues crear el entorno y la estructura en html .luego leimos el lms el cual nos ayudo mucho para crear lo que contendra el achivo main.js el cual contiene toda la funcionalidad del dom; luego de eso se craron las funcionalidades que en este caso fueron 4 ;las que nos permitian :
+-filtrar
+-buscar
+-ordenar
+-selecionar
+y asi poder solucionar algunos problemas que tiene el usuario para acceder a los datos de las alumnas.
+
 
 
 ## usuario:
