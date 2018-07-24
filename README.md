@@ -1,6 +1,40 @@
 # proyecto datadashboard
+
+## Definición del producto
+
+- Principales usuarios:
+
 para que los (TM)training managers puedan ver la data del progreso en el (LMS)learning management system crearemos un datadashboard.
+
 - la logica esta implementada en ES6.
+
+- Objetivos de los usuarios en relación al producto:
+
+Obtener los datos de las alumnas de una manera ágil y sencilla para poder realizar el seguimiento correspondiente a su avance academico.
+
+- Datos mas relevantes de la interfaz:
+
+En la interfaz lo mas relevante e importante para las Training Managers(TMs) es ver el promedio del avance de los ejercicios de todas las alumnas de Laboratoria
+
+- Frecuencia de análisis de datos:
+
+Los datos son analizados al finalizar cada sprint y al finalizar cada projet.
+
+- Solución de problemas:
+
+Si, ya que en la actualidad manejan un archivo de Excel para ver el progreso de las alumnas pero no es practico de utilizar y es poco atractivo visualmente.
+
+- Proceso de diseño:
+
+lo primero que hicimos a nivel squat fue crear el tablero de post (backlog);en el cual creamos tarea especificas parara el primer sprint;como leer el readme ,crear el prototipo de baja fidelidad y el de alta.
+
+luego tomamos notas sobre la entrevista global que hiso nuestra usuaria directe en este caso (tm);para despues crear el entorno y la estructura en html .luego leimos el lms el cual nos ayudo mucho para crear lo que contendra el achivo main.js el cual contiene toda la funcionalidad del dom; luego de eso se craron las funcionalidades que en este caso fueron 4 ;las que nos permitian :
+-filtrar
+-buscar
+-ordenar
+-selecionar
+y asi poder solucionar algunos problemas que tiene el usuario para acceder a los datos de las alumnas.
+
 
 
 ## usuario:
@@ -35,5 +69,16 @@ se tomo notas de los pedidos que hizo el usuario de manera global
 # prototipo de alta fidelidad:
 
 https://www.figma.com/proto/0vVFpPYyTxVeyenGRzpIwSIi/pag-web?scaling=contain&node-id=14%3A9
+
+# producto terminado:
+
+![a](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37582411_1719226011464210_7163442538429284352_n.png?_nc_cat=0&oh=151d5b51d4cbcd4896683f79ac39a50b&oe=5BDC315F)
+
+![terminado](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37570528_1719217478131730_8464684111468953600_n.png?_nc_cat=0&oh=c5ae9967898e65feb3f2510582656fda&oe=5BE58F7F)
+
+
+
+![terminado 2](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37511926_1719218254798319_7291765105987944448_n.png?_nc_cat=0&oh=dee8d8eea163dc9cbdaa29b86ad1a3a9&oe=5BE23AD0)
+
 
 
