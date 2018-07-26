@@ -3,16 +3,12 @@
     margin: 0px;
 }
 #header{
-/* margin: 20px 80px; */
 width: 100px 100px;
-/* font-family: Arial, Helvetica, sans-serif; */
 font-family:Basic Latinc;
-
 }
 .nav ul, li  ul{
     list-style:none;
 }
-
 ul ,li{
     background-color:#FF009E;
     color: #ffffff ;
@@ -26,160 +22,68 @@ ul ,li{
     
     
 }
-/* .nav li ul{
-    float:left;
-} */
-
 .nav ul{
     display: none;
     position: absolute;
     min-width: 160px;
     
-    
-
-      /*borde arriba*/
       border-top: #000000;
-      /*borde derecho*/
       border-right:#000000;
-      /*borde de abajo*/
       border-bottom:#000000;
-      /*borde izquierdo*/
       border-left: #000000;
-      /*para centrar contenido dentro del form*/
+     
 }
 
 .nav li:hover> ul{
     display: block;
-    
 }
-/* .nav li ul li{
-    /* position: relative; */
-/* } */ 
 .nav li ul li ul{
     right: 200px;
     top: 100px;
     
 }
- /* .chau{ */
-    /* achica desde los costados */
-    /* margin: 80px 80px ; */
-    /* ancho vertical */
-    /* padding: 50px; */
-    /* ancho horizontal */
-    /* width: 80px; */
-    /* min-width: 0px; */
-
-/* }  */
 .chau{
-    
- /* font: bold 15px tahoma; */
-    /* width: 150px; */
-    /* margin: 20px auto;  */
-
     background-color:#56F89A ;
     border: 1px solid #000000;
-    /* margenes con respecto a los costados */
      padding: 3px;
     text-align: center; 
     margin: 1px auto; 
-    /* ancho */
-     /* width: 500px ; */
-    /* tamaño de la letra */
-    font:  16px tahoma;
-    /* font: bold 14px tahoma; */
-    
+    font:  16px tahoma; 
      display: block;  
      float: initial;
 font-family:Basic Latin;
-     
 }
-
 .cohort {
-    /* font: bold 15px tahoma; */
-       /* width: 150px; */
-       /* margin: 20px auto;  */
-   
        background-color:#56F89A;
        border: 1px solid #000000 ;
-       /* margenes con respecto a los costados */
-        /* padding: 50px; */
        text-align: center; 
-       /* margin:15px auto;  */
-       /* ancho */
-        /* width: 500px ; */
-       /* tamaño de la letra */
        font: 13px tahoma;
         display: block;  
         float: initial;
         font-family:Basic Latin;
-
-        
    }
 
  .boton {
-    /* background: #FFE521 ;
-    color: #171718;
-    display: inline-block;
-    /* font-size: 1.25em; */
-    /* margin: 5px;
-    width: 100px;
-    text-decoration: none;
-    box-shadow: 8px 2px 10px #56F89A;
-
-    font-family: 'helvetica';
-    font-size: 100%;
-    color: aqua; */ 
-    /* size:''; */
-    /* border-radius: ; */
- /* background: #FFE521 ;}
- color: #292969;
- display: inline-block;
-font-family:Arial, Helvetica, sans-serif;
- 
-
-
-
- font-size: 15px; 
- /* margin: 20px; */
- /* width: 70px; */
- /* text-decoration: none; */
- /* box-shadow: 0px 3px 0px rgb(36, 56, 44) */
-
- /* box-shadow: rgb(43, 29, 121);
- text-decoration: none; */
-
-
-
- /* background: #FFE521 ; */
- color: #000000;
- display: inline-block;
- /* font-size: 1.25em; */
  margin: 30px;
  width: 100px;
  text-decoration: none;
  box-shadow: 3px 3px 8px #56F89A;
-
  font-family: 'helvetica';
  font-size: 100%;
  color: #000000;
  size:'2';
     }
-    .selec{
+.selec{
         background: #000000;
     color: #FFE521 ;
     display: inline-block;
-    /* font-size: 1.25em; */
     margin: 5px;
     width: 150px;
     text-decoration:none;
     box-shadow: 3px 3px 8px #56F89A;
-
     font-family: 'helvetica';
     font-size: 100%;
-    /* color: ; */
     size:'3';
-    
-    
     }
 .selectores{
     background: #000000;
@@ -195,14 +99,10 @@ font-family:Arial, Helvetica, sans-serif;
     font-size: 100%;
     /* color: ; */
     size:'3';
-    
-    
 }
 #search{
     margin: 7px;
     padding: 3px;
     display: inline-block;
-    
     font-size: 105%;
-    
 }
