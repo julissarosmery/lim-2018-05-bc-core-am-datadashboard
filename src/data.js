@@ -78,7 +78,7 @@ window.computeUsersStats = (users, progress, courses) => {
     let response = {
       total: total,
       completed: completado,
-      percent: total != 0 ? Math.round(completado * 100 / total) : 0,
+      percent: total != 0 ? Math.round(completado * 100 / total) : 0,//math.round :redondea
     };
     if (practi === 'quiz') {
       response.scoreAvg = totalCompletadoQuizzes != 0 ? Math.round(puntajeTotal = totalCompletadoQuizzes) : 0;
@@ -171,14 +171,14 @@ window.sortUsers = (users, orderBy, orderDirection) => {
     return order;
   }
 }
-window.filterUsers = (users, search) => {
+window.filterUsers = (users, search) => {//search es algo que cambia (buscar)
   const userFilter = users.filter(user => {
     return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
   });
   return userFilter;
 }
 window.processCohortData = (options) => {
-  const courses = Object.keys(options.cohort.coursesIndex);//el objet.keys devuelve un array:
+  const courses = Object.keys(options.cohort.coursesIndex);//el objet.keys devuelve las llaves:
   let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
   options.search ? students = filterUsers(students, options.search) : students;
   students = sortUsers(students,options.orderBy,options.orderDirection);
